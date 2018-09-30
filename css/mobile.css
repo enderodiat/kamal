@@ -1,0 +1,59 @@
+@media screen and (max-width: 992px) {
+    h1 {
+      font-size: 18px;
+    }
+
+    .boton_siguiente_lg {
+      display: none !important;;
+    }
+
+    .boton_siguiente_md{
+      display: inherit;
+    }
+
+    #registro {
+      padding-top: 90px;
+      padding-right: 5%;
+      padding-left: 5%;
+    }
+
+    .recuadro {
+      display:table;
+    }
+
+    .recuadro h1 {
+      display:table-cell;
+      vertical-align:middle
+    }
+
+    .info_boton_lg {
+      display: none;
+    }
+
+    .info_boton_md {
+      display: inherit;
+      position: absolute;
+      bottom: 2%;
+      width: 100%;
+      text-align: center;
+    }
+
+    .info_boton_md img {
+      width: 50px;
+    }
+
+    #ventana_info{
+      left: 5%;
+      width: 90%;
+      top: 15%;
+      max-height: 67%;
+    }
+
+    #texto_formulario_lg{
+      display: none;
+    }
+
+    #texto_formulario_md{
+      display: inherit;
+    }
+}

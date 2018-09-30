@@ -21,10 +21,8 @@ function inicializarVista(){
   $('.info_boton').click(function(){
     if (ventanaInfoActiva == false){
       mostrarVentanaInfo();
-      ventanaInfoActiva = true;
     } else {
       cerrarVentanaInfo();
-      ventanaInfoActiva = false;
     }
   });
   $('#cerrar_ventana_info').click(function(){

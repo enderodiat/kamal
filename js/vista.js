@@ -20,7 +20,9 @@ function ocultarRegistro(){
 }
 function mostrarVentanaInfo(){
 	$('#ventana_info').show();
+	ventanaInfoActiva = true;
 }
 function cerrarVentanaInfo(){
 	$('#ventana_info').hide();
+	ventanaInfoActiva = false;
 }

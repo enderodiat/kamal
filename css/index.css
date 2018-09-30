@@ -58,6 +58,10 @@ html body .pantalla{
   display: none;
 }
 
+.clickeable{
+  cursor:pointer;
+}
+
 #ventana_info{
   display: none;
   border: solid;

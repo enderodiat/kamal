@@ -1,4 +1,4 @@
 <?php
 Include("conexion.php");
-devolverJSON("sexos");
+devolverJSON("sexos", "OrderId");
 ?>

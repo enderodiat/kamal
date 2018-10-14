@@ -1,4 +1,4 @@
 <?php
-Include("conexion.php");
-devolverJSON("lugares");
+	Include("conexion.php");
+	devolverJSON("lugares", "Nombre");
 ?>

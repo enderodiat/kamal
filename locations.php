@@ -3,7 +3,7 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link href="inc/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+		<link href="css/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/typeaheadjs.css">
 		<link rel="stylesheet" href="https://use.typekit.net/dwh0ovi.css">
 		<link rel="stylesheet" type="text/css" href="css/map-icons.min.css">
@@ -191,7 +191,7 @@
         zoom: 8
       });
 			
-			var icon = "inc/open-iconic/png/map-marker-3x.png";
+			var icon = "css/open-iconic/png/map-marker-3x.png";
 			
 			var defaultIcon = {
 				path: mapIcons.shapes.MAP_PIN,

@@ -35,11 +35,11 @@
 				<div class="col-sm-4 offset-sm-4">
 					<div class="custom-control custom-radio">
 					  <input type="radio" id="typeAgenteCultural" name="userType" value="agentCultural" class="custom-control-input">
-					  <label class="custom-control-label" for="userAgenteCultural"><span>Soy un/a agente cultural (*)</span></label>
+					  <label class="custom-control-label" for="typeAgenteCultural"><span>Soy un/a agente cultural (*)</span></label>
 					</div>
 					<div class="custom-control custom-radio">
 					  <input type="radio" id="typeInstitucion" name="userType" value="institucion" class="custom-control-input">
-					  <label class="custom-control-label" for="userInstitucion"><span>Somos varios/as: espacio, institución, festival, colectivo...</span></label>
+					  <label class="custom-control-label" for="typeInstitucion"><span>Somos varios/as: espacio, institución, festival, colectivo...</span></label>
 					</div>
 				</div>
 				
@@ -313,7 +313,7 @@
 
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
+						<select id="artistEspacios" name="artistEspacios" class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
 							<?php foreach($lugares as $lugar):?>
 								<option value="<?php echo $lugar->Id;?>"><?php echo $lugar->Nombre;?></option>
 							<?php endforeach;?>
@@ -321,7 +321,7 @@
 					</div>
 					
 					<div class="form-group">
-				    <label for="exampleFormControlInput1">Indica en una mapa los espacios si no aparecen en la lista anterior:</label>
+				    <label for="artistEspaciosOther">Indica en una mapa los espacios si no aparecen en la lista anterior:</label>
 				    <button class="add-new btn btn-outline-secondary" type="button">Añada otro espacio &nbsp; <span class="oi oi-plus"></span></button>						
 					</div>
 
@@ -355,7 +355,7 @@
 
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
+						<select id="artistEventos" name="artistEventos" class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
 							<?php foreach($festivales as $festival):?>
 								<option value="<?php echo $festival->Id;?>"><?php echo $festival->Nombre;?></option>
 							<?php endforeach;?>
@@ -363,7 +363,7 @@
 					</div>
 					
 					<div class="form-group">
-				    <label for="exampleFormControlInput1">Nombra algún evento en el que has participado, si no aparece en la lista anterior:</label>
+				    <label for="artistEventosOther">Nombra algún evento en el que has participado, si no aparece en la lista anterior:</label>
 				    <button class="add-new btn btn-outline-secondary" type="button">Add an event &nbsp; <span class="oi oi-plus"></span></button>						
 					</div>
 				</div>
@@ -391,7 +391,7 @@
 
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
+						<select id="artistEtiquetas" name="artistEtiquetas" class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
 							<?php foreach($etiquetas as $etiqueta):?>
 								<option value="<?php echo $etiqueta->Id;?>"><?php echo $etiqueta->Castellano;?></option>
 							<?php endforeach;?>
@@ -399,8 +399,8 @@
 					</div>
 				
 				  <div class="form-group">
-				    <label for="exampleFormControlTextarea1">¿Algún otro tema que te concierna? Cuéntanos.</label>
-				    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				    <label for="artistEtiquetasOther">¿Algún otro tema que te concierna? Cuéntanos.</label>
+				    <textarea class="form-control" id="artistEtiquetasOther" rows="3"></textarea>
 				  </div>
 				
 				</div>
@@ -423,13 +423,13 @@
 				<div class="col-sm-6 offset-sm-3">
 				
 				  <div class="form-group">
-				    <label for="exampleFormControlTextarea1">Para recoger la diversidad del tejido artístico de Navarra, nos sería muy útil que nos sugirieras varios agentes culturales que consideras que deben estar incluidos en este mapeo. (No se publicará. Tiene carácter puramente informativo y a efectos de difusión del proyecto)</label>
-				    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				    <label for="suggestedArtists">Para recoger la diversidad del tejido artístico de Navarra, nos sería muy útil que nos sugirieras varios agentes culturales que consideras que deben estar incluidos en este mapeo. (No se publicará. Tiene carácter puramente informativo y a efectos de difusión del proyecto)</label>
+				    <textarea class="form-control" id="artistSuggestions" name="artistSuggestions" rows="3"></textarea>
 				  </div>
 				
 					<div class="form-group">
 								<div class="custom-control custom-checkbox">
-								  <input class="custom-control-input" type="checkbox" value="1" id="accept-terms">
+								  <input class="custom-control-input" type="checkbox" value="1" name="artistAcceptTerms" id="artistAcceptTerms">
 								  <label class="custom-control-label" for="accept-terms">
 								    He leido y acepto la política de protección de datos
 								  </label>

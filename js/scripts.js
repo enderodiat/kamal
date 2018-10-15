@@ -139,25 +139,24 @@ $("button.new-location").click(function(){
 });
 
 
-var index = 0;
+var index6 = 0;
 
-$("button.add-new").click(function(){
-	if (pantalla==6 && $("#map1").is(":hidden")){
+$("#pantalla6 button.add-new").click(function(){
+	if ($("#map1").is(":hidden")){
 		$("#map1").show();
 		setTimeout(function(){
 			initMap("map1");
-		}, 100);
+		}, 100 );
 	}
 	
 	setTimeout(function(){
-		if (pantalla==6){
-			addDragMarker();
-		}
+		addDragMarker();
 	}, 150 );
 	
+	
 	$(this).parent().append(
-	'<div data-index="'+index+'" class="input-group" style="margin-top:10px;">'+
-	  '<input type="text" class="form-control" placeholder="" aria-label="Recipients username" aria-describedby="basic-addon2">'+
+	'<div data-index="'+index6+'" class="input-group" style="margin-top:10px;">'+
+	  '<input type="text" id="artistEspaciosOther'+index6+'" name="artistEspaciosOther'+index6+'" class="form-control" placeholder="" aria-label="Otro espacio" aria-describedby="artistEspaciosOther'+index6+'">'+
 	  '<div class="input-group-append">'+
 	    '<button class="remove-input btn btn-outline-secondary" type="button"><span class="oi oi-minus"></span></button>'+
 	  '</div>'+
@@ -175,9 +174,33 @@ $("button.add-new").click(function(){
 	$("button.remove-input").click(function(){
 		$(this).parent().parent().remove();
 		var curIndex = $(this).parent().parent().data('index');
-		if (pantalla==6){
-			removeDragMarker(curIndex);
-		}
+		removeDragMarker(curIndex);
 	});
-	index ++;
+	index6++;
+});
+
+var index7 = 0;
+
+$("#pantalla7 button.add-new").click(function(){
+
+	$(this).parent().append(
+	'<div data-index="'+index7+'" class="input-group" style="margin-top:10px;">'+
+	  '<input type="text" id="artistEventosOther'+index7+'" name="artistEventosOther'+index7+'" class="form-control" placeholder="" aria-label="Eventos" aria-describedby="artistEventosOther'+index7+'">'+
+	  '<div class="input-group-append">'+
+	    '<button class="remove-input btn btn-outline-secondary" type="button"><span class="oi oi-minus"></span></button>'+
+	  '</div>'+
+	  '<div class="input-group-append">'+
+	    '<button class="add-input btn btn-outline-secondary" type="button"><span class="oi oi-plus"></span></button>'+
+	 ' </div>'+
+	'</div>'
+	);
+	$("button.add-input").unbind( "click" );
+	$("button.add-input").click(function(){
+		$("button.add-new").click();
+	});
+	$("button.remove-input").unbind( "click" );
+	$("button.remove-input").click(function(){
+		$(this).parent().parent().remove();
+	});
+	index7++;
 });

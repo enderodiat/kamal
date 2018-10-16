@@ -17,16 +17,16 @@
 		
 		
 		//localidades = localidades.map(function(_, i){ return {'value': localidades[i]}; });
-		var map;
-		var bounds;
-		var markers = [];
+		var formMap;
+		var formBounds;
+		var formMarkers = [];
 
 		var dragmarker;
 		var dragmarkers = [];
 		
-    function initMap(id) {
+    function showMap(id) {
 
-      map = new google.maps.Map(document.getElementById(id), {
+      formMap = new google.maps.Map(document.getElementById(id), {
         center: {lat: 42.6088989, lng: -2.7332348},
         zoom: 8
       });
@@ -61,14 +61,14 @@
 					var coords = { lat: lt, lng:lg }
 					var marker = new google.maps.Marker({
 						position: coords,
-						map: map,
+						map: formMap,
 						icon: defaultIcon,
 						title: nombre,
 						options: { opacity:1 }
 					});
-					markers.push(marker);
+					formMarkers.push(marker);
 
-	        marker.addListener('click', function() {
+	        formMarker.addListener('click', function() {
 //					map.setZoom(8);
 //					map.setCenter(marker.getPosition());
 						this.setIcon(activeIcon);
@@ -86,25 +86,25 @@
 					var coords = { lat: lt, lng:lg }
 					var marker = new google.maps.Marker({
 						position: coords,
-						map: map,
+						map: formMap,
 						icon: icon,
 						title: nombre,
 						clickable: false,
 						options: { opacity:0.4 }
 					});
-					markers.push(marker);
+					formMarkers.push(formMarker);
 				}
 			
 			}
 
 
 
-			bounds = new google.maps.LatLngBounds();
-			for (var i = 0; i < markers.length; i++) {
-				bounds.extend(markers[i].getPosition());
+			formBounds = new google.maps.LatLngBounds();
+			for (var i = 0; i < formMarkers.length; i++) {
+				formBounds.extend(formMarkers[i].getPosition());
 			}
-			map.fitBounds(bounds);
-			map.panToBounds(bounds);
+			formMap.fitBounds(bounds);
+			formMap.panToBounds(bounds);
 			
 			/*
 			setTimeout(function(){
@@ -126,8 +126,8 @@
 		
 		function addDragMarker() {		
 			dragmarker = new google.maps.Marker({
-			    position: map.getCenter(),
-			    map: map,
+			    position: formMap.getCenter(),
+			    map: formMap,
 	      	animation: google.maps.Animation.DROP,
 			    draggable:true
 			});

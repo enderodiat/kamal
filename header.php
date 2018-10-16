@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="css/typeaheadjs.css">
 		<link rel="stylesheet" href="https://use.typekit.net/dwh0ovi.css">
 		<link rel="stylesheet" type="text/css" href="css/map-icons.min.css">
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/mobile.css">
 		<link rel="stylesheet" href="css/form.css">
 		<?php
 		$local = "http://localhost/~maxwell/kamal";
@@ -28,18 +30,6 @@
 		$etiquetas = json_decode($json);
 
 		$loc = $_GET['loc'];
-//		$json = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address='.$loc.'&components=country:ES&key=AIzaSyB_unL7sNlPf_bA2EBfdBrWSeYzF-jMERA');
-//		$geocode = json_decode($json);
-//		echo $geocode->results[0]->address_components[0]->long_name;
-//		echo "<br/>";
-//		echo $geocode->results[0]->geometry->location->lat;
-/*
-		$json = file_get_contents('https://secure.geonames.org/searchJSON?name_startsWith='.$loc.'&country=ES&featureCode=PPL&maxRows=10&cities=cities1000&username=maxwellstein');
-		$geocode = json_decode($json);
-		echo "<pre>";
-		print_r($geocode);
-		echo "</pre>";
-*/
 
 		?>
 	</head>

@@ -7,8 +7,8 @@ body {
   font-size:20px;
 }
 
-.pantalla { height:100vh; display:none; }
-.pantalla.active { display:block; }
+.section { height:100vh; display:none; padding-top:60px; }
+.section.active { display:block; }
 
 body { font-family: "minion-pro", serif; }
 
@@ -125,3 +125,5 @@ body { font-family: "minion-pro", serif; }
 .button-container button span.oi { position:relative; top:2px; margin-left:7px; }
 
 .bootstrap-select button { height:38px; }
+
+form { margin-bottom:0px; }

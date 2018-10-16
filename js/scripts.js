@@ -1,63 +1,110 @@
-var pantalla = 1;	
-var numpantallas = 0;
+var section = 1;	
+var numsections = 0;
 $(document).ready(function(){
 	
-	numpantallas = $('.pantalla').length;
-	if (pantalla<numpantallas){
+	numsections = $('.section').length;
+	if (section<numsections){
 		$(".button-next").show();
 	}
-	if (pantalla>1){
+	if (section>1){
 		$(".button-prev").show();
 	}
 });
 
-$(".button-next").click(function(){
-	pantalla = $(".pantalla.active").data("pantalla");
-	$(".pantalla.active").removeClass("active").hide().next().addClass("active").show();
-	pantalla = pantalla+1;
-	if (pantalla>=numpantallas){
-		$(".button-next").hide();
-	}
-	if (pantalla>1){
-		$(".button-prev").show();
-	}
-//	if (pantalla==5 && $("#map1").is(":hidden")){
-	//	setTimeout(function(){
-		//	initMap("map1");
-		//}, 750);
-		//}
+
+
+
+$("form").parsley({
+   errorClass: 'is-invalid text-danger',
+   successClass: 'is-valid',
+   errorsWrapper: '<span class="form-text text-danger"></span>',
+   errorTemplate: '<span></span>',
+   trigger: 'change'
+}).on('field:validated', function() {
+//  var ok = $('.parsley-error').length === 0;
+//  $('.bs-callout-info').toggleClass('hidden', !ok);
+//  $('.bs-callout-warning').toggleClass('hidden', ok);
+}).on('form:submit', function() {
+  return false; // Don't submit form for this demo
+});
+
+$sections = $(".section");
+
+// Next button goes forward iff current block validates
+$('.button-next').click(function() {
+	
+	  $('form').parsley().whenValidate({
+	    group: 'block-' + $(".section.active").data("section")
+	  }).done(function() {
+
+			section = $(".section.active").data("section");
+			if(section==2){
+				if ($("input[name='userType']:checked").val()=="institucion"){
+					$(".section.active").removeClass("active").hide();
+					$("#section11").addClass("active").show();
+					section = section = 11;
+				} else {
+					$(".section.active").removeClass("active").hide().next(".section").addClass("active").show();
+					section = section+1;					
+				}
+			} else {
+				$(".section.active").removeClass("active").hide().next(".section").addClass("active").show();
+				section = section+1;		
+			}
+			if (section>=numsections){
+				$(".button-next").hide();
+			}
+			if (section>1){
+				$(".button-prev").show();
+			}
+	  });
+				
+
+});
+
+$sections.each(function(index, section) {
+  $(section).find(':input').attr('data-parsley-group', 'block-' + $(this).data("section"));
 });
 
 $(".button-prev").click(function(){
-	pantalla = $(".pantalla.active").data("pantalla");
-	$(".pantalla.active").removeClass("active").hide().prev().addClass("active").show();
-	pantalla = pantalla-1;
-	if (pantalla<numpantallas){
+	section = $(".section.active").data("section");
+	if ($("input[name='userType']:checked").val()=="institucion"){
+		if (section==11){
+			$(".section.active").removeClass("active").hide();
+			$("#section2").addClass("active").show();
+			section = section=2;
+		}
+	} else {
+		$(".section.active").removeClass("active").hide().prev().addClass("active").show();
+		section = section-1;
+	}
+
+	if (section<numsections){
 		$(".button-next").show();
 	}
-	if (pantalla<=1){
+	if (section<=1){
 		$(".button-prev").hide();
 	}
 });
 
-$("#pantalla4 select").on("change", function() {
+$("#section4 select").on("change", function() {
 	if ($(this).val()=="other"){
-		$("#pantalla4 .other").show();
-		//initMap("map1");
+		$("#section4 .other").show();
+		//showMap("map1");
 	}
 });
 
-$("#pantalla5 select").on("change", function() {
+$("#section5 select").on("change", function() {
 	if ($(this).val()=="other"){
-		$("#pantalla5 .other").show();
-		//initMap("map2");
+		$("#section5 .other").show();
+		//showMap("map2");
 	}
 });
 
-$("#pantalla6 select").on("change", function() {
+$("#section6 select").on("change", function() {
 	if ($(this).val()=="other"){
-		//$("#pantalla6 .other").show();
-		//initMap("map1");
+		//$("#section6 .other").show();
+		//showMap("map1");
 	}
 });
 
@@ -88,26 +135,26 @@ $('.typeahead').typeahead({
 	//}
 });
 
-$('#pantalla4 .typeahead').on('typeahead:selected', function(evt, item) {
+$('#section4 .typeahead').on('typeahead:selected', function(evt, item) {
 	if (typeof item !== 'undefined' && item != "") {
 		$.get( "https://maps.googleapis.com/maps/api/geocode/json?place_id="+item.place_id+"&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk", function( data ) {
 			var lat = data.results[0].geometry.location.lat;
 			var lng = data.results[0].geometry.location.lng;
 			$("#artistBirthLocOtherLat").val(lat);
 			$("#artistBirthLocOtherLng").val(lng);
-			$("#pantalla4 .coordinates").text(lat + ", "+ lng).show();
+			$("#section4 .coordinates").text(lat + ", "+ lng).show();
 		});
 	}
 });
 
-$('#pantalla5 .typeahead').on('typeahead:selected', function(evt, item) {
+$('#section5 .typeahead').on('typeahead:selected', function(evt, item) {
 	if (typeof item !== 'undefined' && item != "") {
 		$.get( "https://maps.googleapis.com/maps/api/geocode/json?place_id="+item.place_id+"&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk", function( data ) {
 			var lat = data.results[0].geometry.location.lat;
 			var lng = data.results[0].geometry.location.lng;
 			$("#artistCurrentLocOtherLat").val(lat);
 			$("#artistCurrentLocOtherLng").val(lng);
-			$("#pantalla5 .coordinates").text(lat + ", "+ lng).show();
+			$("#section5 .coordinates").text(lat + ", "+ lng).show();
 		});
 	}
 });
@@ -141,11 +188,11 @@ $("button.new-location").click(function(){
 
 var index6 = 0;
 
-$("#pantalla6 button.add-new").click(function(){
+$("#section6 button.add-new").click(function(){
 	if ($("#map1").is(":hidden")){
 		$("#map1").show();
 		setTimeout(function(){
-			initMap("map1");
+			showMap("map1");
 		}, 100 );
 	}
 	
@@ -181,7 +228,7 @@ $("#pantalla6 button.add-new").click(function(){
 
 var index7 = 0;
 
-$("#pantalla7 button.add-new").click(function(){
+$("#section7 button.add-new").click(function(){
 
 	$(this).parent().append(
 	'<div data-index="'+index7+'" class="input-group" style="margin-top:10px;">'+

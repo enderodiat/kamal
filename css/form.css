@@ -3,14 +3,11 @@ html {
   min-height: 100%;
 }
 
-body {
-  font-size:20px;
-}
-
 .section { height:100vh; display:none; padding-top:60px; }
 .section.active { display:block; }
 
-body { font-family: "minion-pro", serif; }
+//body { font-family: "minion-pro", serif; font-size:20px; }
+body { font-family: "antique-olive", sans-serif; font-size:18px; }
 
 .main p { margin-bottom:0px; }
 

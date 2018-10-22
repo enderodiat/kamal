@@ -2,7 +2,7 @@ var section = 1;
 var numsections = 0;
 $(document).ready(function(){
 	
-	numsections = $('.section').length;
+	numsections = $('.section').length + 2;
 	if (section<numsections){
 		$(".button-next").show();
 	}
@@ -10,9 +10,6 @@ $(document).ready(function(){
 		$(".button-prev").show();
 	}
 });
-
-
-
 
 $("form").parsley({
    errorClass: 'is-invalid text-danger',
@@ -30,15 +27,58 @@ $("form").parsley({
 
 $sections = $(".section");
 
+var submitting = 0;
+
 // Next button goes forward iff current block validates
 $('.button-next').click(function() {
+	if ($(this).hasClass("button-submit")) submitting = 1;
 	
-	  $('form').parsley().whenValidate({
-	    group: 'block-' + $(".section.active").data("section")
-	  }).done(function() {
+  $('form').parsley().whenValidate({
+    group: 'block-' + $(".section.active").data("section")
+  }).done(function() {
 
-			section = $(".section.active").data("section");
-			if(section==2){
+		section = $(".section.active").data("section");
+		
+		if (submitting==1){
+			console.log("OK");
+			var success = 1;
+			
+			if (success==1){
+			
+				if (section==2){
+					if ($("input[name='userType']:checked").val()=="institucion"){
+						$(".section.active").removeClass("active").hide();
+						$("#section11").addClass("active").show();
+						section = section = 11;
+					} else {
+						$(".section.active").removeClass("active").hide().next(".section").addClass("active").show();
+						section = section+1;					
+					}
+				} else {
+					$(".section.active").removeClass("active").hide().next(".section").addClass("active").show();
+					section = section+1;		
+				}
+				if (section>=numsections){
+					$(".button-next").hide();
+				}
+				if (section>1){
+					$(".button-prev").show();
+				}
+				
+				$.post("send.php", $("#userData").serialize(), function(data) {
+					console.log(data);
+				});
+				
+				
+			} else {
+					
+				console.log("FAIL");
+					
+			}
+									
+		} else {
+
+			if (section==2){
 				if ($("input[name='userType']:checked").val()=="institucion"){
 					$(".section.active").removeClass("active").hide();
 					$("#section11").addClass("active").show();
@@ -57,9 +97,8 @@ $('.button-next').click(function() {
 			if (section>1){
 				$(".button-prev").show();
 			}
-	  });
-				
-
+		}
+  });
 });
 
 $sections.each(function(index, section) {
@@ -68,12 +107,10 @@ $sections.each(function(index, section) {
 
 $(".button-prev").click(function(){
 	section = $(".section.active").data("section");
-	if ($("input[name='userType']:checked").val()=="institucion"){
-		if (section==11){
-			$(".section.active").removeClass("active").hide();
-			$("#section2").addClass("active").show();
-			section = section=2;
-		}
+	if ($("input[name='userType']:checked").val()=="institucion" && section==11){
+		$(".section.active").removeClass("active").hide();
+		$("#section2").addClass("active").show();
+		section = section=2;
 	} else {
 		$(".section.active").removeClass("active").hide().prev().addClass("active").show();
 		section = section-1;
@@ -86,6 +123,7 @@ $(".button-prev").click(function(){
 		$(".button-prev").hide();
 	}
 });
+
 
 $("#section4 select").on("change", function() {
 	if ($(this).val()=="other"){
@@ -251,3 +289,40 @@ $("#section7 button.add-new").click(function(){
 	});
 	index7++;
 });
+
+var index13 = 0;
+
+$("#section13 button.add-new").click(function(){
+
+	$(this).parent().append(
+	'<div data-index="'+index13+'" class="input-group" style="margin-top:10px;">'+
+	  '<input type="text" id="institucionEventosOther'+index13+'" name="institucionEventosOther'+index13+'" class="form-control" placeholder="" aria-label="Eventos" aria-describedby="institucionEventosOther'+index13+'">'+
+	  '<div class="input-group-append">'+
+	    '<button class="remove-input btn btn-outline-secondary" type="button"><span class="oi oi-minus"></span></button>'+
+	  '</div>'+
+	  '<div class="input-group-append">'+
+	    '<button class="add-input btn btn-outline-secondary" type="button"><span class="oi oi-plus"></span></button>'+
+	 ' </div>'+
+	'</div>'
+	);
+	$("button.add-input").unbind( "click" );
+	$("button.add-input").click(function(){
+		$("button.add-new").click();
+	});
+	$("button.remove-input").unbind( "click" );
+	$("button.remove-input").click(function(){
+		$(this).parent().parent().remove();
+	});
+	index13++;
+});
+
+$('.selectpicker').selectpicker({
+	noneSelectedText:"Nada seleccionado",
+	selectedTextFormat:"count",
+	countSelectedText:"{0} términos seleccionados",
+	liveSearch:true,
+	liveSearchNormalize:true
+});
+
+
+

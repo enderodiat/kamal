@@ -6,16 +6,16 @@
 					
 				  <div class="form-group">
 				    <label for="artistNombre">Nombre y apellidos o nombre artístico (*)</label>
-				    <input type="text" class="form-control" name="artistNombre" id="artistNombre" placeholder="" required>
+				    <input type="text" class="form-control" name="artistNombre" id="artistNombre" placeholder="" required data-parsley-required-message="Este campo es obligatorio.">
 				  </div>
 		
 				  <div class="form-group">
 				    <label for="artistEmail">Correo electrónico (*) (**)</label>
-				    <input type="email" class="form-control" name="artistEmail" id="artistEmail" placeholder="" required>
+				    <input type="email" class="form-control" name="artistEmail" id="artistEmail" placeholder="" required data-parsley-required-message="Este campo es obligatorio." data-parsley-type-message="Escriba por favor su correo electrónico de manera correcta.">
 				  </div>
 		
 				  <div class="form-group">
-				    <label for="artistBirthYear">Año de nacimiento.</label>
+				    <label for="artistBirthYear">Año de nacimiento</label>
 				    <input type="text" class="form-control" name="artistBirthYear" id="artistBirthYear" placeholder="">
 				  </div>
 		
@@ -60,14 +60,14 @@
 			<div class="row">
 				
 				<div class="col-sm-4 offset-sm-4">
-					
+					<!--
 				  <div class="form-group">
 				    <label for="artistBirthLoc">¿De dónde vienes?</label>
 				    <select id="artistBirthLoc" name="artistBirthLoc" class="form-control">
 				      <option></option>
-							<?php foreach($localidades as $localidad):?>
-								<option value="<?php echo $localidad->Id;?>"><?php echo $localidad->Nombre;?></option>
-							<?php endforeach;?>
+							<?php// foreach($localidades as $localidad):?>
+								<option value="<?php// echo $localidad->Id;?>"><?php// echo $localidad->Nombre;?></option>
+								<?php// endforeach;?>
 								<option value="other">No aparece en la lista.</option>
 				    </select>
 				  </div>
@@ -78,7 +78,16 @@
 			      <div class="coordinates valid-feedback"></div>
 						<input id="artistBirthLocOtherLat" type="hidden" name="artistBirthLocOtherLat" value="">
 						<input id="artistBirthLocOtherLng" type="hidden" name="artistBirthLocOtherLng" value="">
+					</div>-->
+						
+					<div class="form-group localidades">
+				    <label for="artistBirthLoc">¿De dónde vienes?</label>
+						<input type="text" class="form-control typeahead" id="artistBirthLoc" name="artistBirthLoc" placeholder="">
+			      <div class="coordinates valid-feedback"></div>
+						<input id="artistBirthLocLat" type="hidden" name="artistBirthLocLat" value="">
+						<input id="artistBirthLocLng" type="hidden" name="artistBirthLocLng" value="">
 					</div>
+
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
@@ -96,14 +105,14 @@
 			<div class="row">
 				
 				<div class="col-sm-4 offset-sm-4">
-					
+					<!--
 				  <div class="form-group">
 				    <label for="artistCurrentLoc">Lugar de residencia habitual</label>
 				    <select id="artistCurrentLoc" name="artistCurrentLoc" class="form-control">
 				      <option></option>
-							<?php foreach($localidades as $localidad):?>
-								<option value="<?php echo $localidad->Id;?>"><?php echo $localidad->Nombre;?></option>
-							<?php endforeach;?>
+							<?php// foreach($localidades as $localidad):?>
+								<option value="<?php// echo $localidad->Id;?>"><?php// echo $localidad->Nombre;?></option>
+							<?php// endforeach;?>
 								<option value="other">No aparece en la lista.</option>
 				    </select>
 				  </div>
@@ -114,8 +123,18 @@
 			      <div class="coordinates valid-feedback"></div>
 						<input id="artistCurrentLocOtherLat" type="hidden" name="artistCurrentLocOtherLat" value="">
 						<input id="artistCurrentLocOtherLng" type="hidden" name="artistCurrentLocOtherLng" value="">
-					</div>						
+					</div>
+					-->
 					
+					<div class="form-group localidades">
+				    <label for="artistCurrentLoc">Lugar de residencia habitual</label>
+						<input type="text" class="form-control typeahead" id="artistCurrentLoc" name="artistCurrentLoc" placeholder="">
+			      <div class="coordinates valid-feedback"></div>
+						<input id="artistCurrentLocLat" type="hidden" name="artistCurrentLocLat" value="">
+						<input id="artistCurrentLocLng" type="hidden" name="artistCurrentLocLng" value="">
+					</div>
+					
+						
 				</div>
 								
 				<div class="col-sm-12 text-center button-container">
@@ -139,7 +158,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="artistEspacios" name="artistEspacios" class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
+						<select id="artistEspacios" name="artistEspacios" class="selectpicker" multiple>
 							<?php foreach($lugares as $lugar):?>
 								<option value="<?php echo $lugar->Id;?>"><?php echo $lugar->Nombre;?></option>
 							<?php endforeach;?>
@@ -179,7 +198,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="artistEventos" name="artistEventos" class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
+						<select id="artistEventos" name="artistEventos" class="selectpicker" multiple>
 							<?php foreach($festivales as $festival):?>
 								<option value="<?php echo $festival->Id;?>"><?php echo $festival->Nombre;?></option>
 							<?php endforeach;?>
@@ -188,7 +207,7 @@
 					
 					<div class="form-group">
 				    <label for="artistEventosOther">Nombra algún evento en el que has participado, si no aparece en la lista anterior:</label>
-				    <button class="add-new btn btn-outline-secondary" type="button">Add an event &nbsp; <span class="oi oi-plus"></span></button>						
+				    <button class="add-new btn btn-outline-secondary" type="button">Añada un evento &nbsp; <span class="oi oi-plus"></span></button>						
 					</div>
 				</div>
 				
@@ -214,7 +233,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="artistEtiquetas" name="artistEtiquetas" class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
+						<select id="artistEtiquetas" name="artistEtiquetas" class="selectpicker" multiple>
 							<?php foreach($etiquetas as $etiqueta):?>
 								<option value="<?php echo $etiqueta->Id;?>"><?php echo $etiqueta->Castellano;?></option>
 							<?php endforeach;?>
@@ -251,7 +270,7 @@
 				
 					<div class="form-group">
 								<div class="custom-control custom-checkbox">
-								  <input class="custom-control-input" type="checkbox" value="1" name="artistAcceptTerms" id="artistAcceptTerms" required>
+								  <input class="custom-control-input" type="checkbox" value="1" name="artistAcceptTerms" id="artistAcceptTerms" required data-parsley-required-message="Este campo es obligatorio.">
 								  <label class="custom-control-label" for="artistAcceptTerms">
 								    He leido y acepto la política de protección de datos
 								  </label>
@@ -260,7 +279,7 @@
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>
+					<button class="button-next button-submit btn btn-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>
 				</div>
 			</div>
 		</div>

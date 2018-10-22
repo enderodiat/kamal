@@ -6,12 +6,12 @@
 					
 				  <div class="form-group">
 				    <label for="institucionNombre">Nombre del espacio, festival, colectivo o institución (*)</label>
-				    <input type="text" class="form-control" name="institucionNombre" id="institucionNombre" placeholder="" required>
+				    <input type="text" class="form-control" name="institucionNombre" id="institucionNombre" placeholder="" required data-parsley-required-message="Este campo es obligatorio.">
 				  </div>
 		
 				  <div class="form-group">
 				    <label for="institucionEmail">Correo electrónico (*) (**)</label>
-				    <input type="email" class="form-control" name="institucionEmail" id="institucionEmail" placeholder="" required>
+				    <input type="email" class="form-control" name="institucionEmail" id="institucionEmail" placeholder="" required data-parsley-required-message="Este campo es obligatorio." data-parsley-type-message="Escriba por favor su correo electrónico de manera correcta.">
 				  </div>
 		
 				  <div class="form-group">
@@ -30,17 +30,14 @@
 				  </div>
 
 				  <div class="form-group">
-				    <label for="institucionTelefono">Teléfono (***)</label>
+				    <label for="institucionTelefono">Teléfono (**)</label>
 				    <input type="text" class="form-control" name="institucionTelefono" id="institucionTelefono" placeholder="">
 				  </div>
 
 					<p class="small footnote">						
 						(*) Campos obligatorios<br/>
 						(**) Esta información tiene caracter reservado
-						a efectos de modificación de datos personales. No será publicada.<br/>
-						(***) Al cumplimentar tu número de teléfono,
-						prestas tu conformidad para su difusión en la presente web.
-						
+						a efectos de modificación de datos personales. No será publicada.
 					</p>
 				</div>
 							
@@ -100,7 +97,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="institucionEventos" name="institucionEventos" class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
+						<select id="institucionEventos" name="institucionEventos" class="selectpicker" multiple>
 							<?php foreach($festivales as $festival):?>
 								<option value="<?php echo $festival->Id;?>"><?php echo $festival->Nombre;?></option>
 							<?php endforeach;?>
@@ -109,7 +106,7 @@
 					
 					<div class="form-group">
 				    <label for="institucionEventosOther">Si no aparece en la lista anterior, nombra alguno:</label>
-				    <button class="add-new btn btn-outline-secondary" type="button">Add an event &nbsp; <span class="oi oi-plus"></span></button>						
+				    <button class="add-new btn btn-outline-secondary" type="button">Añada un evento &nbsp; <span class="oi oi-plus"></span></button>						
 					</div>
 				</div>
 				
@@ -135,7 +132,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="institucionEtiquetas" name="institucionEtiquetas" class="selectpicker" multiple data-live-search="true" data-selected-text-format="count">
+						<select id="institucionEtiquetas" name="institucionEtiquetas" class="selectpicker" multiple>
 							<?php foreach($etiquetas as $etiqueta):?>
 								<option value="<?php echo $etiqueta->Id;?>"><?php echo $etiqueta->Castellano;?></option>
 							<?php endforeach;?>
@@ -172,7 +169,7 @@
 				
 					<div class="form-group">
 								<div class="custom-control custom-checkbox">
-								  <input class="custom-control-input" type="checkbox" value="1" name="institucionAcceptTerms" id="institucionAcceptTerms" required>
+								  <input class="custom-control-input" type="checkbox" value="1" name="institucionAcceptTerms" id="institucionAcceptTerms" required data-parsley-required-message="Este campo es obligatorio.">
 								  <label class="custom-control-label" for="institucionAcceptTerms">
 								    He leido y acepto la política de protección de datos
 								  </label>
@@ -181,7 +178,7 @@
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>
+					<button class="button-next button-submit btn btn-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>
 				</div>
 			</div>
 		</div>

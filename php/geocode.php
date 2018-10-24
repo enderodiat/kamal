@@ -15,7 +15,9 @@ if(isset($_GET['loc']) && $_GET['loc']!=""){
 	*/
 	
 	//	$json = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$loc.'&types=geocode&components=country:es&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk');
-	$json = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$loc.'&types=geocode&components=country:es&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk');
+	//$json = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$loc.'&types=geocode&components=country:es&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk');
+	$json = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$loc.'&types=geocode&components&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk');
+	
 	$data = json_decode($json);
 	//print_r($data);
 

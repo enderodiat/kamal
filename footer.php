@@ -7,7 +7,6 @@
 		var localidades = <?php echo json_encode($localidades, JSON_UNESCAPED_UNICODE);?>;
 	</script>
 	
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0oebl1k1yH3CkxWS0vldSepERG7sFov4&callback=initMap" type="text/javascript"></script>
 		
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -19,7 +18,6 @@
 	<script src="js/map-icons.js"></script>
 
 	<script src="js/typeahead.bundle.js"></script>
-	<script src="js/maps.js"></script>
 
 	<script type="text/javascript" src="js/parametros.js"></script>
 	<script type="text/javascript" src="js/_ajax.js"></script>
@@ -29,6 +27,11 @@
 	<script type="text/javascript" src="js/index.js"></script>
 
 	<script src="js/scripts.js"></script>
+
+	<script src="js/maps.js"></script>
+
+<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0oebl1k1yH3CkxWS0vldSepERG7sFov4&callback=initMap" type="text/javascript"></script>-->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0oebl1k1yH3CkxWS0vldSepERG7sFov4" type="text/javascript"></script>
 
 
 	</body>

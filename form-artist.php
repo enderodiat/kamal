@@ -158,7 +158,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="artistEspacios" name="artistEspacios" class="selectpicker" multiple>
+						<select id="artistEspacios" name="artistEspacios[]" class="selectpicker" multiple>
 							<?php foreach($lugares as $lugar):?>
 								<option value="<?php echo $lugar->Id;?>"><?php echo $lugar->Nombre;?></option>
 							<?php endforeach;?>
@@ -167,7 +167,8 @@
 					
 					<div class="form-group">
 				    <label for="artistEspaciosOther">Indica en una mapa los espacios si no aparecen en la lista anterior:</label>
-				    <button class="add-new btn btn-outline-secondary" type="button">Añada otro espacio &nbsp; <span class="oi oi-plus"></span></button>						
+				    <button class="add-new btn btn-outline-secondary" type="button">Añada otro espacio &nbsp; <span class="oi oi-plus"></span></button>
+						<button class="remove-new btn btn-outline-secondary" type="button" style="display:none;"></button>
 					</div>
 
 				</div>
@@ -198,7 +199,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="artistEventos" name="artistEventos" class="selectpicker" multiple>
+						<select id="artistEventos" name="artistEventos[]" class="selectpicker" multiple>
 							<?php foreach($festivales as $festival):?>
 								<option value="<?php echo $festival->Id;?>"><?php echo $festival->Nombre;?></option>
 							<?php endforeach;?>
@@ -207,7 +208,8 @@
 					
 					<div class="form-group">
 				    <label for="artistEventosOther">Nombra algún evento en el que has participado, si no aparece en la lista anterior:</label>
-				    <button class="add-new btn btn-outline-secondary" type="button">Añada un evento &nbsp; <span class="oi oi-plus"></span></button>						
+				    <button class="add-new btn btn-outline-secondary" type="button">Añada un evento &nbsp; <span class="oi oi-plus"></span></button>
+						<button class="remove-new btn btn-outline-secondary" type="button" style="display:none;"></button>
 					</div>
 				</div>
 				
@@ -233,7 +235,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="artistEtiquetas" name="artistEtiquetas" class="selectpicker" multiple>
+						<select id="artistEtiquetas" name="artistEtiquetas[]" class="selectpicker" multiple>
 							<?php foreach($etiquetas as $etiqueta):?>
 								<option value="<?php echo $etiqueta->Id;?>"><?php echo $etiqueta->Castellano;?></option>
 							<?php endforeach;?>
@@ -242,7 +244,7 @@
 				
 				  <div class="form-group">
 				    <label for="artistEtiquetasOther">¿Algún otro tema que te concierna? Cuéntanos.</label>
-				    <textarea class="form-control" id="artistEtiquetasOther" rows="3"></textarea>
+				    <textarea class="form-control" id="artistEtiquetasOther" name="artistEtiquetasOther" rows="3"></textarea>
 				  </div>
 				
 				</div>

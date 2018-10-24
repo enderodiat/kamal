@@ -1,7 +1,9 @@
 var section = 1;	
 var numsections = 0;
 $(document).ready(function(){
-	
+
+	inicializarVista();
+		
 	numsections = $('.section').length + 2;
 	if (section<numsections){
 		$(".button-next").show();
@@ -12,17 +14,17 @@ $(document).ready(function(){
 });
 
 $("form").parsley({
-   errorClass: 'is-invalid text-danger',
-   successClass: 'is-valid',
-   errorsWrapper: '<span class="form-text text-danger"></span>',
-   errorTemplate: '<span></span>',
-   trigger: 'change'
+	errorClass: 'is-invalid text-danger',
+	successClass: 'is-valid',
+	errorsWrapper: '<span class="form-text text-danger"></span>',
+	errorTemplate: '<span></span>',
+	trigger: 'change'
 }).on('field:validated', function() {
 //  var ok = $('.parsley-error').length === 0;
 //  $('.bs-callout-info').toggleClass('hidden', !ok);
 //  $('.bs-callout-warning').toggleClass('hidden', ok);
 }).on('form:submit', function() {
-  return false; // Don't submit form for this demo
+	return false; // Don't submit form for this demo
 });
 
 $sections = $(".section");
@@ -64,7 +66,10 @@ $('.button-next').click(function() {
 				if (section>1){
 					$(".button-prev").show();
 				}
-				
+
+
+
+
 				$.post("send.php", $("#userData").serialize(), function(data) {
 					console.log(data);
 				});
@@ -178,8 +183,8 @@ $('#section4 .typeahead').on('typeahead:selected', function(evt, item) {
 		$.get( "https://maps.googleapis.com/maps/api/geocode/json?place_id="+item.place_id+"&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk", function( data ) {
 			var lat = data.results[0].geometry.location.lat;
 			var lng = data.results[0].geometry.location.lng;
-			$("#artistBirthLocOtherLat").val(lat);
-			$("#artistBirthLocOtherLng").val(lng);
+			$("#artistBirthLocLat").val(lat);
+			$("#artistBirthLocLng").val(lng);
 			$("#section4 .coordinates").text(lat + ", "+ lng).show();
 		});
 	}
@@ -190,8 +195,8 @@ $('#section5 .typeahead').on('typeahead:selected', function(evt, item) {
 		$.get( "https://maps.googleapis.com/maps/api/geocode/json?place_id="+item.place_id+"&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk", function( data ) {
 			var lat = data.results[0].geometry.location.lat;
 			var lng = data.results[0].geometry.location.lng;
-			$("#artistCurrentLocOtherLat").val(lat);
-			$("#artistCurrentLocOtherLng").val(lng);
+			$("#artistCurrentLocLat").val(lat);
+			$("#artistCurrentLocLng").val(lng);
 			$("#section5 .coordinates").text(lat + ", "+ lng).show();
 		});
 	}
@@ -226,22 +231,30 @@ $("button.new-location").click(function(){
 
 var index6 = 0;
 
+
 $("#section6 button.add-new").click(function(){
 	if ($("#map1").is(":hidden")){
 		$("#map1").show();
 		setTimeout(function(){
 			showMap("map1");
-		}, 100 );
+		}, 50 );
 	}
-	
+
 	setTimeout(function(){
-		addDragMarker();
-	}, 150 );
-	
-	
+		addDragMarker(index6);	
+	}, 60 );
+
+	setTimeout(function(){
+		$("#section6").append('<input type="hidden" id="artistEspaciosOtherLat'+(index6-1)+'" name="artistEspaciosOtherLat'+index6+'" value="">');
+		$("#section6").append('<input type="hidden" id="artistEspaciosOtherLng'+(index6-1)+'" name="artistEspaciosOtherLng'+index6+'" value="">');
+	}, 120);
+					
 	$(this).parent().append(
 	'<div data-index="'+index6+'" class="input-group" style="margin-top:10px;">'+
-	  '<input type="text" id="artistEspaciosOther'+index6+'" name="artistEspaciosOther'+index6+'" class="form-control" placeholder="" aria-label="Otro espacio" aria-describedby="artistEspaciosOther'+index6+'">'+
+	  '<div class="input-group-prepend">'+
+			'<span class="input-group-text" id="basic-addon1">'+(index6+1)+'</span>'+
+	 ' </div>'+
+	  '<input type="text" id="artistEspaciosOther'+index6+'" name="artistEspaciosOther[]'+index6+'" class="form-control artistEspaciosOther" placeholder="Título" aria-label="Otro espacio" aria-describedby="artistEspaciosOther'+index6+'">'+
 	  '<div class="input-group-append">'+
 	    '<button class="remove-input btn btn-outline-secondary" type="button"><span class="oi oi-minus"></span></button>'+
 	  '</div>'+
@@ -251,17 +264,36 @@ $("#section6 button.add-new").click(function(){
 	'</div>'
 	);
 	
-	$("button.add-input").unbind( "click" );
-	$("button.add-input").click(function(){
+	$("#section6 button.add-input").unbind( "click" );
+	$("#section6 button.add-input").click(function(){
 		$(this).parent().parent().parent().find("button.add-new").click();
 	});
-	$("button.remove-input").unbind( "click" );
-	$("button.remove-input").click(function(){
-		$(this).parent().parent().remove();
-		var curIndex = $(this).parent().parent().data('index');
-		removeDragMarker(curIndex);
+	
+	$("#section6 button.remove-input").unbind( "click" );
+	$("#section6 button.remove-input").click(function(){
+		$(this).parent().parent().parent().find("button.remove-new").click();
 	});
+
+	$(this).parent().find(".input-group-append").hide();
+	$(this).parent().find(".input-group").last().find(".input-group-append").show();
+	
 	index6++;
+
+});
+
+$("#section6 button.remove-new").click(function(){
+
+	index6--;
+
+	setTimeout(function(){
+		removeDragMarker(index6);
+	}, 60 );
+	
+	$(this).parent().find(".input-group").last().remove();
+	
+	$(this).parent().find(".input-group-append").hide();
+	$(this).parent().find(".input-group").last().find(".input-group-append").show();
+	
 });
 
 var index7 = 0;
@@ -269,25 +301,46 @@ var index7 = 0;
 $("#section7 button.add-new").click(function(){
 
 	$(this).parent().append(
-	'<div data-index="'+index7+'" class="input-group" style="margin-top:10px;">'+
-	  '<input type="text" id="artistEventosOther'+index7+'" name="artistEventosOther'+index7+'" class="form-control" placeholder="" aria-label="Eventos" aria-describedby="artistEventosOther'+index7+'">'+
-	  '<div class="input-group-append">'+
-	    '<button class="remove-input btn btn-outline-secondary" type="button"><span class="oi oi-minus"></span></button>'+
-	  '</div>'+
-	  '<div class="input-group-append">'+
-	    '<button class="add-input btn btn-outline-secondary" type="button"><span class="oi oi-plus"></span></button>'+
-	 ' </div>'+
-	'</div>'
+'<div data-index="'+index7+'" class="input-group" style="margin-top:10px;">'+
+	'<div class="input-group-prepend">'+
+		'<span class="input-group-text" id="basic-addon1">'+(index7+1)+'</span>'+
+	' </div>'+
+  '<input type="text" id="artistEventosOther'+index7+'" name="artistEventosOther[]" class="form-control artistEventosOther" placeholder="Título" aria-label="Eventos" aria-describedby="artistEventosOther'+index7+'">'+
+  '<div class="input-group-append">'+
+    '<button class="remove-input btn btn-outline-secondary" type="button"><span class="oi oi-minus"></span></button>'+
+  '</div>'+
+  '<div class="input-group-append">'+
+    '<button class="add-input btn btn-outline-secondary" type="button"><span class="oi oi-plus"></span></button>'+
+ ' </div>'+
+'</div>'
 	);
-	$("button.add-input").unbind( "click" );
-	$("button.add-input").click(function(){
-		$("button.add-new").click();
+	
+	$("#section7 button.add-input").unbind( "click" );
+	$("#section7 button.add-input").click(function(){
+		$(this).parent().parent().parent().find("button.add-new").click();
 	});
-	$("button.remove-input").unbind( "click" );
-	$("button.remove-input").click(function(){
-		$(this).parent().parent().remove();
+	
+	$("#section7 button.remove-input").unbind( "click" );
+	$("#section7 button.remove-input").click(function(){
+		$(this).parent().parent().parent().find("button.remove-new").click();
 	});
+
+	$(this).parent().find(".input-group-append").hide();
+	$(this).parent().find(".input-group").last().find(".input-group-append").show();
+	
 	index7++;
+
+});
+
+$("#section7 button.remove-new").click(function(){
+
+	index7--;
+	
+	$(this).parent().find(".input-group").last().remove();
+	
+	$(this).parent().find(".input-group-append").hide();
+	$(this).parent().find(".input-group").last().find(".input-group-append").show();
+	
 });
 
 var index13 = 0;
@@ -295,25 +348,46 @@ var index13 = 0;
 $("#section13 button.add-new").click(function(){
 
 	$(this).parent().append(
-	'<div data-index="'+index13+'" class="input-group" style="margin-top:10px;">'+
-	  '<input type="text" id="institucionEventosOther'+index13+'" name="institucionEventosOther'+index13+'" class="form-control" placeholder="" aria-label="Eventos" aria-describedby="institucionEventosOther'+index13+'">'+
-	  '<div class="input-group-append">'+
-	    '<button class="remove-input btn btn-outline-secondary" type="button"><span class="oi oi-minus"></span></button>'+
-	  '</div>'+
-	  '<div class="input-group-append">'+
-	    '<button class="add-input btn btn-outline-secondary" type="button"><span class="oi oi-plus"></span></button>'+
-	 ' </div>'+
-	'</div>'
+'<div data-index="'+index13+'" class="input-group" style="margin-top:10px;">'+
+	'<div class="input-group-prepend">'+
+		'<span class="input-group-text" id="basic-addon1">'+(index13+1)+'</span>'+
+	' </div>'+
+  '<input type="text" id="institucionEventosOther'+index13+'" name="institucionEventosOther[]" class="form-control institucionEventosOther" placeholder="Título" aria-label="Eventos" aria-describedby="institucionEventosOther'+index13+'">'+
+  '<div class="input-group-append">'+
+    '<button class="remove-input btn btn-outline-secondary" type="button"><span class="oi oi-minus"></span></button>'+
+  '</div>'+
+  '<div class="input-group-append">'+
+    '<button class="add-input btn btn-outline-secondary" type="button"><span class="oi oi-plus"></span></button>'+
+ ' </div>'+
+'</div>'
 	);
-	$("button.add-input").unbind( "click" );
-	$("button.add-input").click(function(){
-		$("button.add-new").click();
+	
+	$("#section13 button.add-input").unbind( "click" );
+	$("#section13 button.add-input").click(function(){
+		$(this).parent().parent().parent().find("button.add-new").click();
 	});
-	$("button.remove-input").unbind( "click" );
-	$("button.remove-input").click(function(){
-		$(this).parent().parent().remove();
+	
+	$("#section13 button.remove-input").unbind( "click" );
+	$("#section13 button.remove-input").click(function(){
+		$(this).parent().parent().parent().find("button.remove-new").click();
 	});
+
+	$(this).parent().find(".input-group-append").hide();
+	$(this).parent().find(".input-group").last().find(".input-group-append").show();
+	
 	index13++;
+
+});
+
+$("#section13 button.remove-new").click(function(){
+
+	index13--;
+	
+	$(this).parent().find(".input-group").last().remove();
+	
+	$(this).parent().find(".input-group-append").hide();
+	$(this).parent().find(".input-group").last().find(".input-group-append").show();
+	
 });
 
 $('.selectpicker').selectpicker({
@@ -323,6 +397,3 @@ $('.selectpicker').selectpicker({
 	liveSearch:true,
 	liveSearchNormalize:true
 });
-
-
-

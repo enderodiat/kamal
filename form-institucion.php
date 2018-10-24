@@ -56,26 +56,16 @@
 				
 				<div class="col-sm-4 offset-sm-4">
 					
-				  <div class="form-group">
+					<div class="form-group localidades">
 				    <label for="institucionLoc">¿Dónde te ubicas?</label>
-				    <select id="institucionLoc" name="institucionLoc" class="form-control">
-				      <option></option>
-							<?php foreach($localidades as $localidad):?>
-								<option value="<?php echo $localidad->Id;?>"><?php echo $localidad->Nombre;?></option>
-							<?php endforeach;?>
-								<option value="other">No aparece en la lista.</option>
-				    </select>
-				  </div>
-				
-					<div class="other form-group localidades">
-				    <label for="institucionLocOther">Localidad</label>
-						<input type="text" class="form-control typeahead" id="institucionLocOther" name="institucionLocOther" placeholder="Enter the name of the localidad.">
+						<input type="text" class="form-control typeahead" id="institucionLoc" name="institucionLoc" placeholder="">
 			      <div class="coordinates valid-feedback"></div>
-						<input id="institucionLocOtherLat" type="hidden" name="institucionLocOtherLat" value="">
-						<input id="institucionLocOtherLng" type="hidden" name="institucionLocOtherLng" value="">
+						<input id="institucionLocLat" type="hidden" name="institucionLocLat" value="">
+						<input id="institucionLocLng" type="hidden" name="institucionLocLng" value="">
 					</div>
+
 				</div>
-				
+								
 				<div class="col-sm-12 text-center button-container">
 					<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>
 				</div>
@@ -97,7 +87,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="institucionEventos" name="institucionEventos" class="selectpicker" multiple>
+						<select id="institucionEventos" name="institucionEventos[]" class="selectpicker" multiple>
 							<?php foreach($festivales as $festival):?>
 								<option value="<?php echo $festival->Id;?>"><?php echo $festival->Nombre;?></option>
 							<?php endforeach;?>
@@ -132,7 +122,7 @@
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="institucionEtiquetas" name="institucionEtiquetas" class="selectpicker" multiple>
+						<select id="institucionEtiquetas" name="institucionEtiquetas[]" class="selectpicker" multiple>
 							<?php foreach($etiquetas as $etiqueta):?>
 								<option value="<?php echo $etiqueta->Id;?>"><?php echo $etiqueta->Castellano;?></option>
 							<?php endforeach;?>
@@ -141,7 +131,7 @@
 				
 				  <div class="form-group">
 				    <label for="institucionEtiquetasOther">¿Algún otro tema que te concierna? Cuéntanos.</label>
-				    <textarea class="form-control" id="institucionEtiquetasOther" rows="3"></textarea>
+				    <textarea class="form-control" id="institucionEtiquetasOther" name="institucionEtiquetasOther" rows="3"></textarea>
 				  </div>
 				
 				</div>

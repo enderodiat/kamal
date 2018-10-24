@@ -27,12 +27,11 @@
     function showMap(id) {
 
       formMap = new google.maps.Map(document.getElementById(id), {
-        center: {lat: 42.6088989, lng: -2.7332348},
-        zoom: 8
+        //center: {lat: 42.6088989, lng: -2.7332348},
+				center: {lat: lt_inicial, lng: lg_inicial},
+        zoom: 12
       });
-			
-			//var icon = "css/open-iconic/png/map-marker-3x.png";
-			
+						
 			defaultIcon = {
 				path: mapIcons.shapes.MAP_PIN,
 				fillColor: '#00CCBB',
@@ -53,6 +52,8 @@
 			
 			if (id=="map1"){
 				
+				/*
+				
 				for (i = 0; i < lugares.length; i++) {
 					var nombre = lugares[i].Nombre;
 					var lt = parseFloat(lugares[i].lt);
@@ -68,13 +69,14 @@
 					});
 					formMarkers.push(marker);
 
-	        formMarker.addListener('click', function() {
+	        marker.addListener('click', function() {
 //					map.setZoom(8);
 //					map.setCenter(marker.getPosition());
 						this.setIcon(activeIcon);
 	        });
 
 				}
+				*/
 				
 			} else {
 							
@@ -98,13 +100,15 @@
 			}
 
 
-
+			/*
+			// recenter around markers
 			formBounds = new google.maps.LatLngBounds();
 			for (var i = 0; i < formMarkers.length; i++) {
 				formBounds.extend(formMarkers[i].getPosition());
 			}
-			formMap.fitBounds(bounds);
-			formMap.panToBounds(bounds);
+			formMap.fitBounds(formBounds);
+			formMap.panToBounds(formBounds);
+			*/
 			
 			/*
 			setTimeout(function(){
@@ -124,26 +128,32 @@
 			
     }
 		
-		function addDragMarker() {		
+		function addDragMarker(index) {		
 			dragmarker = new google.maps.Marker({
 			    position: formMap.getCenter(),
 			    map: formMap,
+					label: index.toString(),
 	      	animation: google.maps.Animation.DROP,
 			    draggable:true
 			});
 			
-			dragmarkers.push(dragmarker);
-			
-			
-		  //map.addListener('zoom_changed', function() {
-				//map.panTo(dragmarker.position);
-				//});
-			
+			dragmarkers.push(dragmarker);			
+			var dragIndex = index-1;
+			console.log(dragIndex);
+			google.maps.event.addListener(dragmarker, 'dragend', function(){
+				$("#section6 #artistEspaciosOtherLat"+dragIndex).val(dragmarkers[dragIndex].position.lat());
+				$("#section6 #artistEspaciosOtherLng"+dragIndex).val(dragmarkers[dragIndex].position.lng());
+			});
 		}
 		
 		function removeDragMarker(index) {
-			dragmarkers[index].setMap(null);			
+			dragmarkers[index].setMap(null);
+			dragmarkers.pop();
 		}
+		
+		
+		
+		
 		
 		
 		

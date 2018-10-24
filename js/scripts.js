@@ -30,10 +30,13 @@ $("form").parsley({
 $sections = $(".section");
 
 var submitting = 0;
+var buttonStart = 0;
 
 // Next button goes forward iff current block validates
 $('.button-next').click(function() {
+	
 	if ($(this).hasClass("button-submit")) submitting = 1;
+	if ($(this).hasClass("button-start")) buttonStart = 1;
 	
   $('form').parsley().whenValidate({
     group: 'block-' + $(".section.active").data("section")
@@ -44,7 +47,7 @@ $('.button-next').click(function() {
 		if (submitting==1){
 			console.log("OK");
 			var success = 1;
-			
+
 			if (success==1){
 			
 				if (section==2){
@@ -60,9 +63,9 @@ $('.button-next').click(function() {
 					$(".section.active").removeClass("active").hide().next(".section").addClass("active").show();
 					section = section+1;		
 				}
-				if (section>=numsections){
-					$(".button-next").hide();
-				}
+//				if (section>=numsections){
+	//				$(".button-next").hide();
+	//			}
 				if (section>1){
 					$(".button-prev").show();
 				}
@@ -72,7 +75,10 @@ $('.button-next').click(function() {
 
 				$.post("send.php", $("#userData").serialize(), function(data) {
 					console.log(data);
+					submitting=0;
 				});
+
+				$(".button-prev").hide();
 				
 				
 			} else {
@@ -82,8 +88,16 @@ $('.button-next').click(function() {
 			}
 									
 		} else {
-
-			if (section==2){
+			
+			if (buttonStart == 1){
+				console.log("OKOK");
+				$(".section.active").removeClass('active').hide();
+				$('.section').first().addClass('active').show();
+				document.getElementById("userData").reset();
+				$('#userData').parsley().reset();
+				section=1;
+				buttonStart = 0;
+			} else if (section==2){
 				if ($("input[name='userType']:checked").val()=="institucion"){
 					$(".section.active").removeClass("active").hide();
 					$("#section11").addClass("active").show();
@@ -96,15 +110,16 @@ $('.button-next').click(function() {
 				$(".section.active").removeClass("active").hide().next(".section").addClass("active").show();
 				section = section+1;		
 			}
-			if (section>=numsections){
-				$(".button-next").hide();
-			}
+//			if (section>=numsections){
+	//			$(".button-next").hide();
+		//	}
 			if (section>1){
 				$(".button-prev").show();
 			}
 		}
   });
 });
+
 
 $sections.each(function(index, section) {
   $(section).find(':input').attr('data-parsley-group', 'block-' + $(this).data("section"));

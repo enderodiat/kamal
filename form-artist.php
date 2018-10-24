@@ -294,7 +294,12 @@
 			<div class="row">
 				<div class="col-sm-4 offset-sm-4">
 					<p class="lead">Muchas gracias por tu colaboración. En breve aparecerás en nuestro mapa. Ayúdanos a crecer, no dudes en difundir el proyecto.</p>
+						
 				</div>
+				<div class="col-sm-12 text-center button-container">
+					<button class="button-start button-next btn btn-light" type="button"><span class="oi oi-arrow-left"></span>Nuevo formulario</button>
+				</div>
+				
 			</div>
 		</div>
 	</div>

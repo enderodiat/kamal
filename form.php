@@ -1,7 +1,43 @@
 <?php include_once("header.php");?>
 <form id="userData" name="userData">
 
-<div id="section1" class="section active" data-section="1">
+<div id="section0" class="section active" data-section="0">
+	<div class="main v-center">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-4 offset-sm-4 small">
+					<p class="lead"><strong>Información básica sobre Protección de Datos Responsable:</strong> Centro Huarte de Arte Contemporáneo</p>
+					<p>&nbsp;</p>
+					<p><strong>Finalidad:</strong> Gestionar el envío de boletines por correo electrónico con información gratuita y sin publicidad, relacionada con los temas que se tratan en mi la web centrohuarte.es.</p>
+					<p><strong>Legitimación:</strong> Consentimiento del interesado</p>
+					<p><strong>Destinatarios:</strong> Se comunicarán datos a MailChimp para gestionar las suscripciones a la lista de correo como plataforma de envío de boletines por correo electrónico.</p>
+					<p><strong>Derechos:</strong> Tiene derecho a Acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.</p>
+					<p><strong>Plazo de conservación de los datos:</strong> Hasta que no se solicite su supresión por el interesado.</p>
+					<p><strong>Información adicional:</strong> Puede consultar la información adicional y detallada sobre Protección de Datos Personales en la página web centrohuarte.es</p>						
+					
+					<p>&nbsp;</p>
+				
+					<div class="form-group">
+								<div class="custom-control custom-checkbox">
+								  <input class="custom-control-input" type="checkbox" value="1" name="acceptPrivacy" id="acceptPrivacy" required data-parsley-required-message="Este campo es obligatorio.">
+								  <label class="custom-control-label" for="acceptPrivacy">
+								    He leído y acepto la política de privacidad
+								  </label>
+								</div>
+					</div>				
+				</div>
+				
+				<div class="col-sm-12 text-center button-container">
+					<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="section1" class="section" data-section="1">
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">

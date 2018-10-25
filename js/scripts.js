@@ -1,4 +1,4 @@
-var section = 1;	
+var section = 0;
 var numsections = 0;
 $(document).ready(function(){
 
@@ -8,7 +8,7 @@ $(document).ready(function(){
 	if (section<numsections){
 		$(".button-next").show();
 	}
-	if (section>1){
+	if (section>0){
 		$(".button-prev").show();
 	}
 });
@@ -66,7 +66,7 @@ $('.button-next').click(function() {
 //				if (section>=numsections){
 	//				$(".button-next").hide();
 	//			}
-				if (section>1){
+				if (section>0){
 					$(".button-prev").show();
 				}
 
@@ -95,7 +95,7 @@ $('.button-next').click(function() {
 				$('.section').first().addClass('active').show();
 				document.getElementById("userData").reset();
 				$('#userData').parsley().reset();
-				section=1;
+				section=0;
 				buttonStart = 0;
 			} else if (section==2){
 				if ($("input[name='userType']:checked").val()=="institucion"){
@@ -113,7 +113,7 @@ $('.button-next').click(function() {
 //			if (section>=numsections){
 	//			$(".button-next").hide();
 		//	}
-			if (section>1){
+			if (section>0){
 				$(".button-prev").show();
 			}
 		}
@@ -139,7 +139,7 @@ $(".button-prev").click(function(){
 	if (section<numsections){
 		$(".button-next").show();
 	}
-	if (section<=1){
+	if (section<=0){
 		$(".button-prev").hide();
 	}
 });

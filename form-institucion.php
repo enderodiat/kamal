@@ -2,6 +2,8 @@
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">				
+				<div class="col-sm-12"><p class="text-right">1 / 5</p></div>
+
 				<div class="col-sm-4 offset-sm-4">
 					
 				  <div class="form-group">
@@ -53,6 +55,7 @@
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-12"><p class="text-right">2 / 5</p></div>
 				
 				<div class="col-sm-4 offset-sm-4">
 					
@@ -79,6 +82,8 @@
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-12"><p class="text-right">3 / 5</p></div>
+
 				<div class="col-sm-6 offset-sm-3">
 					<h5>Eventos que has alojado (en caso de espacios), que has promovido (en el caso de instituciones) o en los que has participado (colectivos)</h5>
 				</div>
@@ -113,6 +118,7 @@
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-12"><p class="text-right">4 / 5</p></div>
 				
 				<div class="col-sm-6 offset-sm-3">
 					<h5>Selecciona alguno de los siguientes términos para describir tu práctica:</h5>
@@ -150,6 +156,8 @@
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-12"><p class="text-right">5 / 5</p></div>
+
 				<div class="col-sm-6 offset-sm-3">
 
 				  <div class="form-group">
@@ -179,6 +187,7 @@
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">
+
 				<div class="col-sm-4 offset-sm-4">
 					<p class="lead">Muchas gracias por tu colaboración. En breve aparecerás en nuestro mapa. Ayúdanos a crecer, no dudes en difundir el proyecto.</p>
 				</div>

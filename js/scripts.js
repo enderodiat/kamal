@@ -1,4 +1,4 @@
-var section = 0;
+var section = 1;
 var numsections = 0;
 $(document).ready(function(){
 
@@ -53,8 +53,8 @@ $('.button-next').click(function() {
 				if (section==2){
 					if ($("input[name='userType']:checked").val()=="institucion"){
 						$(".section.active").removeClass("active").hide();
-						$("#section11").addClass("active").show();
-						section = section = 11;
+						$("#section12").addClass("active").show();
+						section = section = 12;
 					} else {
 						$(".section.active").removeClass("active").hide().next(".section").addClass("active").show();
 						section = section+1;					
@@ -92,15 +92,16 @@ $('.button-next').click(function() {
 			if (buttonStart == 1){
 				$(".section.active").removeClass('active').hide();
 				$('.section').first().addClass('active').show();
+				$('.selectpicker').selectpicker('deselectAll');
 				document.getElementById("userData").reset();
 				$('#userData').parsley().reset();
-				section=0;
+				section=1;
 				buttonStart = 0;
 			} else if (section==2){
 				if ($("input[name='userType']:checked").val()=="institucion"){
 					$(".section.active").removeClass("active").hide();
-					$("#section11").addClass("active").show();
-					section = section = 11;
+					$("#section12").addClass("active").show();
+					section = 12;
 				} else {
 					$(".section.active").removeClass("active").hide().next(".section").addClass("active").show();
 					section = section+1;					
@@ -126,7 +127,7 @@ $sections.each(function(index, section) {
 
 $(".button-prev").click(function(){
 	section = $(".section.active").data("section");
-	if ($("input[name='userType']:checked").val()=="institucion" && section==11){
+	if ($("input[name='userType']:checked").val()=="institucion" && section==12){
 		$(".section.active").removeClass("active").hide();
 		$("#section2").addClass("active").show();
 		section = section=2;
@@ -402,6 +403,10 @@ $("#section13 button.remove-new").click(function(){
 	$(this).parent().find(".input-group-append").hide();
 	$(this).parent().find(".input-group").last().find(".input-group-append").show();
 	
+});
+
+$("#privacyModal button.acepto").click(function(){
+	$("input.acceptTerms").prop('checked', 1);
 });
 
 $('.selectpicker').selectpicker({

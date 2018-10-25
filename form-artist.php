@@ -2,7 +2,7 @@
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">				
-				<div class="col-sm-12"><p class="text-right">1 / 7</p></div>
+				<div class="col-sm-12"><p class="text-right">1 / 8</p></div>
 
 				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 										
@@ -60,7 +60,7 @@
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12"><p class="text-right">2 / 7</p></div>
+				<div class="col-sm-12"><p class="text-right">2 / 8</p></div>
 				
 				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					<!--
@@ -107,7 +107,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-sm-12"><p class="text-right">3 / 7</p></div>
+				<div class="col-sm-12"><p class="text-right">3 / 8</p></div>
 
 				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					<!--
@@ -156,7 +156,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-sm-12"><p class="text-right">4 / 7</p></div>
+				<div class="col-sm-12"><p class="text-right">4 / 8</p></div>
 
 				<div class="col-sm-6 offset-sm-3">
 					<h5>¿Qué espacios frecuentas o has frecuentado?</h5>
@@ -200,7 +200,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-sm-12"><p class="text-right">5 / 7</p></div>
+				<div class="col-sm-12"><p class="text-right">5 / 8</p></div>
 
 				<div class="col-sm-6 offset-sm-3">
 					<h5>Eventos en los que has participado</h5>
@@ -238,7 +238,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-sm-12"><p class="text-right">6 / 7</p></div>
+				<div class="col-sm-12"><p class="text-right">6 / 8</p></div>
 
 				<div class="col-sm-6 offset-sm-3">
 					<h5>Selecciona alguno de los siguientes términos para describir tu práctica:</h5>
@@ -277,7 +277,7 @@
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-sm-12"><p class="text-right">7 / 7</p></div>
+				<div class="col-sm-12"><p class="text-right">7 / 8</p></div>
 
 				<div class="col-sm-6 offset-sm-3">
 
@@ -285,19 +285,11 @@
 				    <label for="suggestedArtists">Para recoger la diversidad del tejido artístico de Navarra, nos sería muy útil que nos sugirieras varios agentes culturales que consideras que deben estar incluidos en este mapeo. (No se publicará. Tiene carácter puramente informativo y a efectos de difusión del proyecto)</label>
 				    <textarea class="form-control" id="artistSuggestions" name="artistSuggestions" rows="3"></textarea>
 				  </div>
-				
-					<div class="form-group">
-								<div class="custom-control custom-checkbox">
-								  <input class="custom-control-input" type="checkbox" value="1" name="artistAcceptTerms" id="artistAcceptTerms" required data-parsley-required-message="Este campo es obligatorio.">
-								  <label class="custom-control-label" for="artistAcceptTerms">
-								    He leido y acepto la política de protección de datos
-								  </label>
-								</div>
-					</div>				
+								
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next button-submit btn btn-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>
+					<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>
 				</div>
 			</div>
 		</div>
@@ -305,6 +297,44 @@
 </div>
 
 <div id="section10" class="section" data-section="10">
+	<div class="main v-center">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-12"><p class="text-right">8 / 8</p></div>
+
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 small">
+					<p class="lead"><strong>Información básica sobre Protección de Datos Responsable:</strong> Centro Huarte de Arte Contemporáneo</p>
+					<p>&nbsp;</p>
+					<p><strong>Finalidad:</strong> Gestionar el envío de boletines por correo electrónico con información gratuita y sin publicidad, relacionada con los temas que se tratan en mi la web <a href="http://centrohuarte.es" target="_blank">centrohuarte.es</a>.</p>
+					<p><strong>Legitimación:</strong> Consentimiento del interesado</p>
+					<p><strong>Destinatarios:</strong> Se comunicarán datos a MailChimp para gestionar las suscripciones a la lista de correo como plataforma de envío de boletines por correo electrónico.</p>
+					<p><strong>Derechos:</strong> Tiene derecho a Acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.</p>
+					<p><strong>Plazo de conservación de los datos:</strong> Hasta que no se solicite su supresión por el interesado.</p>
+					<p><strong>Información adicional:</strong> Puede consultar la información adicional y detallada sobre Protección de Datos Personales en la página web <a href="http://centrohuarte.es" target="_blank">centrohuarte.es</a></p>						
+					
+					<p>&nbsp;</p>
+				
+					<div class="form-group">
+						<div class="custom-control custom-checkbox">
+						  <input class="custom-control-input acceptTerms" type="checkbox" value="1" name="artistAcceptTerms" id="artistAcceptTerms" required data-parsley-required-message="Este campo es obligatorio.">
+						  <label class="custom-control-label" for="artistAcceptTerms">
+						    He leido y acepto <a href="#privacyModal" data-toggle="modal">la política de protección de datos</a>
+						  </label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-12 text-center button-container">
+					<button class="button-next button-submit btn btn-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="section11" class="section" data-section="11">
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">

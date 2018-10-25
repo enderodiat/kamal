@@ -9,12 +9,12 @@
 				<div class="col-sm-4 offset-sm-4 small">
 					<p class="lead"><strong>Información básica sobre Protección de Datos Responsable:</strong> Centro Huarte de Arte Contemporáneo</p>
 					<p>&nbsp;</p>
-					<p><strong>Finalidad:</strong> Gestionar el envío de boletines por correo electrónico con información gratuita y sin publicidad, relacionada con los temas que se tratan en mi la web centrohuarte.es.</p>
+					<p><strong>Finalidad:</strong> Gestionar el envío de boletines por correo electrónico con información gratuita y sin publicidad, relacionada con los temas que se tratan en mi la web <a href="http://centrohuarte.es" target="_blank">centrohuarte.es</a>.</p>
 					<p><strong>Legitimación:</strong> Consentimiento del interesado</p>
 					<p><strong>Destinatarios:</strong> Se comunicarán datos a MailChimp para gestionar las suscripciones a la lista de correo como plataforma de envío de boletines por correo electrónico.</p>
 					<p><strong>Derechos:</strong> Tiene derecho a Acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.</p>
 					<p><strong>Plazo de conservación de los datos:</strong> Hasta que no se solicite su supresión por el interesado.</p>
-					<p><strong>Información adicional:</strong> Puede consultar la información adicional y detallada sobre Protección de Datos Personales en la página web centrohuarte.es</p>						
+					<p><strong>Información adicional:</strong> Puede consultar la información adicional y detallada sobre Protección de Datos Personales en la página web <a href="http://centrohuarte.es" target="_blank">centrohuarte.es</a></p>						
 					
 					<p>&nbsp;</p>
 				

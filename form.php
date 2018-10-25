@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 small">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4 small">
 					<p class="lead"><strong>Información básica sobre Protección de Datos Responsable:</strong> Centro Huarte de Arte Contemporáneo</p>
 					<p>&nbsp;</p>
 					<p><strong>Finalidad:</strong> Gestionar el envío de boletines por correo electrónico con información gratuita y sin publicidad, relacionada con los temas que se tratan en mi la web <a href="http://centrohuarte.es" target="_blank">centrohuarte.es</a>.</p>
@@ -18,7 +18,7 @@
 					
 					<p>&nbsp;</p>
 				
-					<div class="form-group text-center">
+					<div class="form-group">
 						<div class="custom-control custom-checkbox">
 						  <input class="custom-control-input" type="checkbox" value="1" name="acceptPrivacy" id="acceptPrivacy" required data-parsley-required-message="Este campo es obligatorio.">
 						  <label class="custom-control-label" for="acceptPrivacy">

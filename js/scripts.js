@@ -90,7 +90,6 @@ $('.button-next').click(function() {
 		} else {
 			
 			if (buttonStart == 1){
-				console.log("OKOK");
 				$(".section.active").removeClass('active').hide();
 				$('.section').first().addClass('active').show();
 				document.getElementById("userData").reset();

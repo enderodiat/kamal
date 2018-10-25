@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-sm-4 offset-sm-4 small">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 small">
 					<p class="lead"><strong>Información básica sobre Protección de Datos Responsable:</strong> Centro Huarte de Arte Contemporáneo</p>
 					<p>&nbsp;</p>
 					<p><strong>Finalidad:</strong> Gestionar el envío de boletines por correo electrónico con información gratuita y sin publicidad, relacionada con los temas que se tratan en mi la web <a href="http://centrohuarte.es" target="_blank">centrohuarte.es</a>.</p>
@@ -18,14 +18,14 @@
 					
 					<p>&nbsp;</p>
 				
-					<div class="form-group">
-								<div class="custom-control custom-checkbox">
-								  <input class="custom-control-input" type="checkbox" value="1" name="acceptPrivacy" id="acceptPrivacy" required data-parsley-required-message="Este campo es obligatorio.">
-								  <label class="custom-control-label" for="acceptPrivacy">
-								    He leído y acepto la política de privacidad
-								  </label>
-								</div>
-					</div>				
+					<div class="form-group text-center">
+						<div class="custom-control custom-checkbox">
+						  <input class="custom-control-input" type="checkbox" value="1" name="acceptPrivacy" id="acceptPrivacy" required data-parsley-required-message="Este campo es obligatorio.">
+						  <label class="custom-control-label" for="acceptPrivacy">
+						    He leído y acepto la política de privacidad
+						  </label>
+						</div>
+					</div>
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
@@ -42,7 +42,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-sm-4 offset-sm-4">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					<p class="lead">Kamal es un proyecto en proceso para mapear el tejido artístico navarro.</p>
 					<p class="lead">Es necesaria tu aportación para visibilizar la pluralidad de agentes que lo constituyen.</p>
 					<p class="lead">La información que nos quieras dar servirá para trazar los diferentes tipos de mapas que aparecen en la página de inicio.</p>
@@ -64,7 +64,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div id="userType" class="col-sm-4 offset-sm-4">
+				<div id="userType" class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					<div class="custom-control custom-radio">
 					  <input type="radio" id="typeAgenteCultural" name="userType" value="agentCultural" class="custom-control-input" data-parsley-errors-container="#userTypeError" data-parsley-class-handler="#userType" required data-parsley-required-message="Este campo es obligatorio.">
 					  <label class="custom-control-label" for="typeAgenteCultural"><span>Soy un/a agente cultural (*)</span></label>

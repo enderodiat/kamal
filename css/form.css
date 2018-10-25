@@ -9,6 +9,10 @@ html {
 //body { font-family: "minion-pro", serif; font-size:20px; }
 body { font-family: "antique-olive", sans-serif; font-size:18px; }
 
+a { text-decoration:underline; color: #000; }
+
+a:hover { text-decoration:none; color:#000; }
+
 .main p { margin-bottom:0px; }
 
 .row { position:relative; }

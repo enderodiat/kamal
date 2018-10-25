@@ -4,7 +4,7 @@
 			<div class="row">				
 				<div class="col-sm-12"><p class="text-right">1 / 5</p></div>
 
-				<div class="col-sm-4 offset-sm-4">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					
 				  <div class="form-group">
 				    <label for="institucionNombre">Nombre del espacio, festival, colectivo o institución (*)</label>
@@ -57,7 +57,7 @@
 			<div class="row">
 				<div class="col-sm-12"><p class="text-right">2 / 5</p></div>
 				
-				<div class="col-sm-4 offset-sm-4">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					
 					<div class="form-group localidades">
 				    <label for="institucionLoc">¿Dónde te ubicas?</label>
@@ -188,7 +188,7 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="col-sm-4 offset-sm-4">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					<p class="lead">Muchas gracias por tu colaboración. En breve aparecerás en nuestro mapa. Ayúdanos a crecer, no dudes en difundir el proyecto.</p>
 				</div>
 				<div class="col-sm-12 text-center button-container">

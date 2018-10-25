@@ -4,7 +4,7 @@
 			<div class="row">				
 				<div class="col-sm-12"><p class="text-right">1 / 7</p></div>
 
-				<div class="col-sm-4 offset-sm-4">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 										
 				  <div class="form-group">
 				    <label for="artistNombre">Nombre y apellidos o nombre artístico (*)</label>
@@ -62,7 +62,7 @@
 			<div class="row">
 				<div class="col-sm-12"><p class="text-right">2 / 7</p></div>
 				
-				<div class="col-sm-4 offset-sm-4">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					<!--
 				  <div class="form-group">
 				    <label for="artistBirthLoc">¿De dónde vienes?</label>
@@ -109,7 +109,7 @@
 
 				<div class="col-sm-12"><p class="text-right">3 / 7</p></div>
 
-				<div class="col-sm-4 offset-sm-4">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					<!--
 				  <div class="form-group">
 				    <label for="artistCurrentLoc">Lugar de residencia habitual</label>
@@ -308,7 +308,7 @@
 	<div class="main v-center">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-4 offset-sm-4">
+				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
 					<p class="lead">Muchas gracias por tu colaboración. En breve aparecerás en nuestro mapa. Ayúdanos a crecer, no dudes en difundir el proyecto.</p>
 						
 				</div>

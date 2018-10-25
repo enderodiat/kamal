@@ -16,7 +16,7 @@ if(isset($_GET['loc']) && $_GET['loc']!=""){
 	
 	//	$json = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$loc.'&types=geocode&components=country:es&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk');
 	//$json = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$loc.'&types=geocode&components=country:es&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk');
-	$json = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$loc.'&types=geocode&components&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk');
+	$json = file_get_contents('https://maps.googleapis.com/maps/api/place/autocomplete/json?input='.$loc.'&types=(cities)&key=AIzaSyD4I4HZ25lHy9WftOj4x3fEKCoEGYmJHgk');
 	
 	$data = json_decode($json);
 	//print_r($data);
@@ -24,12 +24,15 @@ if(isset($_GET['loc']) && $_GET['loc']!=""){
 
 	foreach($data->predictions as $result){
 		$place_id = $result->place_id;
-		$name = $result->structured_formatting->main_text;
+		$name = $result->structured_formatting->main_text . ", " . $result->structured_formatting->secondary_text;
 		$names[] = $name;
+		$description = $result->$description;
+		//echo $description;
+		$descriptions[] = $description;
 		$locations[] = array('name'=>$name, 'place_id' => $place_id);			
 	}	
 
-	$locations = array_unique($locations);
+	//$locations = array_unique($locations);
 	
 	
 	//$lats = array_unique($lats);

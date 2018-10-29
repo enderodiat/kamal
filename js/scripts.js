@@ -2,13 +2,35 @@ var section = 1;
 var numsections = 0;
 $(document).ready(function(){
 
-	inicializarVista();
-		
+	$("#map_button").click(function(){
+		$("#map").show();
+		$("#form").hide();
+		$("#form_button img").attr('src', 'img/timon_square_letters_white.png')
+		$("#map_button img").attr('src', 'img/kamal_square_letters.png')
+		$(this).addClass('btn-light');
+		$(this).removeClass('btn-dark');
+		$("#form_button").removeClass('btn-light');
+		$("#form_button").addClass('btn-outline-dark');
+		$("#info_button").show();
+	});
+
+	$("#form_button").click(function(){
+		$("#form").show();
+		$("#map").hide();
+		$("#form_button img").attr('src', 'img/timon_square_letters.png')
+		$("#map_button img").attr('src', 'img/kamal_square_letters_white.png')
+		$(this).addClass('btn-light');
+		$(this).removeClass('btn-outline-dark');
+		$("#map_button").removeClass('btn-light');
+		$("#map_button").addClass('btn-dark');
+		$("#info_button").hide();
+	});
+			
 	numsections = $('.section').length + 2;
 	if (section<numsections){
 		$(".button-next").show();
 	}
-	if (section>0){
+	if (section>1){
 		$(".button-prev").show();
 	}
 });
@@ -66,7 +88,7 @@ $('.button-next').click(function() {
 //				if (section>=numsections){
 	//				$(".button-next").hide();
 	//			}
-				if (section>0){
+				if (section>1){
 					$(".button-prev").show();
 				}
 
@@ -113,7 +135,7 @@ $('.button-next').click(function() {
 //			if (section>=numsections){
 	//			$(".button-next").hide();
 		//	}
-			if (section>0){
+			if (section>1){
 				$(".button-prev").show();
 			}
 		}
@@ -139,7 +161,7 @@ $(".button-prev").click(function(){
 	if (section<numsections){
 		$(".button-next").show();
 	}
-	if (section<=0){
+	if (section<=1){
 		$(".button-prev").hide();
 	}
 });
@@ -416,3 +438,6 @@ $('.selectpicker').selectpicker({
 	liveSearch:true,
 	liveSearchNormalize:true
 });
+
+//
+

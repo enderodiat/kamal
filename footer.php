@@ -1,7 +1,7 @@
-	<button class="button-prev v-center-fixed btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
+	<button class="desktop button-prev v-center-fixed btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
 	<!--<button class="button-next v-center-fixed btn btn-light" type="button"><span class="oi oi-arrow-right"></span></button>-->
 
-<div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
+<div class="modal fade privacy" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">

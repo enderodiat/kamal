@@ -10,12 +10,10 @@
 					<p class="lead">Kamal es un proyecto en proceso para mapear el tejido artístico navarro.</p>
 					<p class="lead">Es necesaria tu aportación para visibilizar la pluralidad de agentes que lo constituyen.</p>
 					<p class="lead">La información que nos quieras dar servirá para trazar los diferentes tipos de mapas que aparecen en la página de inicio.</p>
-					</p>
 				</div>
-
-				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button">COMIENZO<span class="oi oi-arrow-right"></span></button>
+					<button class="button-next btn btn-light" type="button"><img src="img/comienzo.png" width="100"></button>
+					<!--<button class="button-next btn btn-light" type="button">COMIENZO<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -45,7 +43,9 @@
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>
+					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 			</div>
 		</div>

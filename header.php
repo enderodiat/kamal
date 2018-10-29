@@ -8,8 +8,10 @@
 		<link rel="stylesheet" href="css/typeaheadjs.css">
 		<link rel="stylesheet" href="https://use.typekit.net/dwh0ovi.css">
 		<link rel="stylesheet" type="text/css" href="css/map-icons.min.css">
-		<link rel="stylesheet" href="css/index.css">
-		<link rel="stylesheet" href="css/mobile.css">
+		<!--
+			<link rel="stylesheet" href="css/index.css">
+			<link rel="stylesheet" href="css/mobile.css">
+		-->
 		<link rel="stylesheet" href="css/form.css">
 		<?php
 		$local = "http://localhost/~maxwell/kamal";

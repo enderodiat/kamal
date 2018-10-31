@@ -44,9 +44,9 @@
 				</div>
 							
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 					
 					<div class="form-group localidades">
 				    <label for="institucionLoc">¿Dónde te ubicas?</label>
-						<input type="text" class="form-control typeahead" id="institucionLoc" name="institucionLoc" placeholder="">
+						<input type="text" class="form-control typeahead address" id="institucionLoc" name="institucionLoc" placeholder="">
 			      <div class="coordinates valid-feedback"></div>
 						<input id="institucionLocLat" type="hidden" name="institucionLocLat" value="">
 						<input id="institucionLocLng" type="hidden" name="institucionLocLng" value="">
@@ -72,9 +72,9 @@
 				</div>
 								
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -88,15 +88,16 @@
 			<div class="row">
 				<div class="col-sm-12"><p class="page-marker">3 / 6</p></div>
 
-				<div class="col-sm-6 offset-sm-3">
+<!--				<div class="col-sm-6 offset-sm-3">
 					<h5>Eventos que has alojado (en caso de espacios), que has promovido (en el caso de instituciones) o en los que has participado (colectivos)</h5>
-				</div>
+				</div>-->
 			</div>
 			
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="institucionEventos" name="institucionEventos[]" class="selectpicker" multiple>
+				    <label for="institucionEventos">Eventos que has alojado (en caso de espacios), que has promovido (en el caso de instituciones) o en los que has participado (colectivos):</label>
+						<select id="institucionEventos" name="institucionEventos[]" class="bootstrap-select" multiple>
 							<?php foreach($festivales as $festival):?>
 								<option value="<?php echo $festival->Id;?>"><?php echo $festival->Nombre;?></option>
 							<?php endforeach;?>
@@ -105,14 +106,14 @@
 					
 					<div class="form-group">
 				    <label for="institucionEventosOther">Si no aparece en la lista anterior, nombra alguno:</label>
-				    <button class="add-new btn btn-outline-secondary" type="button">Añada un evento &nbsp; <span class="oi oi-plus"></span></button>						
+				    <button class="add-new btn btn-light" type="button">Añada un evento &nbsp; <span class="oi oi-plus"></span></button>						
 					</div>
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -126,15 +127,16 @@
 			<div class="row">
 				<div class="col-sm-12"><p class="page-marker">4 / 6</p></div>
 				
-				<div class="col-sm-6 offset-sm-3">
+				<!--<div class="col-sm-6 offset-sm-3">
 					<h5>Selecciona alguno de los siguientes términos para describir tu práctica:</h5>
-				</div>
+				</div>-->
 			</div>
 			
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="institucionEtiquetas" name="institucionEtiquetas[]" class="selectpicker" multiple>
+				    <label for="institucionEtiquetas">Selecciona alguno de los siguientes términos para describir tu práctica:</label>
+						<select id="institucionEtiquetas" name="institucionEtiquetas[]" class="bootstrap-select" multiple>
 							<?php foreach($etiquetas as $etiqueta):?>
 								<option value="<?php echo $etiqueta->Id;?>"><?php echo $etiqueta->Castellano;?></option>
 							<?php endforeach;?>
@@ -150,9 +152,9 @@
 					
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -175,9 +177,9 @@
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 			</div>
 		</div>
@@ -192,7 +194,7 @@
 				<div class="col-sm-12"><p class="page-marker">6 / 6</p></div>
 
 				<div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3">
-					<p class="lead"><strong>Información básica sobre Protección de Datos Responsable:</strong> Centro Huarte de Arte Contemporáneo</p>
+					<p class="lead"><strong>Información sobre protección de datos encuestados</strong></p>
 					<p>&nbsp;</p>
 
 					<div class="privacy">
@@ -229,9 +231,9 @@
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next button-submit btn btn-light" type="button"><img src="img/enviar-sq.png" width="150"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next button-submit btn btn-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next button-submit btn btn-outline-light" type="button"><img src="img/enviar-sq.png" width="150"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next button-submit btn btn-outline-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -248,8 +250,8 @@
 					<p class="lead">Muchas gracias por tu colaboración. En breve aparecerás en nuestro mapa. Ayúdanos a crecer, no dudes en difundir el proyecto.</p>
 				</div>
 				<div class="col-sm-12 text-center button-container">
-					<!--<button class="button-start button-next btn btn-light" type="button"><span class="oi oi-arrow-left"></span>Nuevo formulario</button>-->
-					<button class="button-start button-next btn btn-light" type="button"><img src="img/nuevo.png" width="150"></button>
+					<!--<button class="button-start button-next btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span>Nuevo formulario</button>-->
+					<button class="button-start button-next btn btn-outline-light" type="button"><img src="img/nuevo.png" width="150"></button>
 				</div>
 			</div>
 		</div>

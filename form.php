@@ -1,6 +1,7 @@
 <?php include_once("header.php");?>
 <form id="userData" name="userData">
 
+
 <div id="section1" class="section active" data-section="1">
 	<div class="main v-center">
 		<div class="container">
@@ -12,8 +13,8 @@
 					<p class="lead">La información que nos quieras dar servirá para trazar los diferentes tipos de mapas que aparecen en la página de inicio.</p>
 				</div>
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/comienzo.png" width="100"></button>
-					<!--<button class="button-next btn btn-light" type="button">COMIENZO<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/comienzo.png" width="100"></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">COMIENZO<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -43,9 +44,9 @@
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 			</div>
 		</div>
@@ -58,5 +59,6 @@
 <?php include("form-institucion.php");?>
 
 </form>
+
 
 <?php include_once('footer.php');?>

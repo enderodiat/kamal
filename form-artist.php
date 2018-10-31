@@ -49,9 +49,9 @@
 				</div>
 							
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 			</div>
 		</div>
@@ -87,7 +87,7 @@
 						
 					<div class="form-group localidades">
 				    <label for="artistBirthLoc">¿De dónde vienes?</label>
-						<input type="text" class="form-control typeahead" id="artistBirthLoc" name="artistBirthLoc" placeholder="">
+						<input type="text" class="form-control typeahead city" id="artistBirthLoc" name="artistBirthLoc" placeholder="">
 			      <div class="coordinates valid-feedback"></div>
 						<input id="artistBirthLocLat" type="hidden" name="artistBirthLocLat" value="">
 						<input id="artistBirthLocLng" type="hidden" name="artistBirthLocLng" value="">
@@ -96,9 +96,9 @@
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -137,7 +137,7 @@
 					
 					<div class="form-group localidades">
 				    <label for="artistCurrentLoc">Lugar de residencia habitual</label>
-						<input type="text" class="form-control typeahead" id="artistCurrentLoc" name="artistCurrentLoc" placeholder="">
+						<input type="text" class="form-control typeahead city" id="artistCurrentLoc" name="artistCurrentLoc" placeholder="">
 			      <div class="coordinates valid-feedback"></div>
 						<input id="artistCurrentLocLat" type="hidden" name="artistCurrentLocLat" value="">
 						<input id="artistCurrentLocLng" type="hidden" name="artistCurrentLocLng" value="">
@@ -147,9 +147,9 @@
 				</div>
 								
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -164,15 +164,17 @@
 
 				<div class="col-sm-12"><p class="page-marker">4 / 8</p></div>
 
-				<div class="col-sm-6 offset-sm-3">
+<!--				<div class="col-sm-6 offset-sm-3">
 					<h5>¿Qué espacios frecuentas o has frecuentado?</h5>
 				</div>				
+
+-->	
 			</div>
-			
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="artistEspacios" name="artistEspacios[]" class="selectpicker" multiple>
+				    <label for="artistEspacios">¿Qué espacios frecuentas o has frecuentado?</label>
+						<select id="artistEspacios" name="artistEspacios[]" class="bootstrap-select" multiple>
 							<?php foreach($lugares as $lugar):?>
 								<option value="<?php echo $lugar->Id;?>"><?php echo $lugar->Nombre;?></option>
 							<?php endforeach;?>
@@ -180,9 +182,9 @@
 					</div>
 					
 					<div class="form-group">
-				    <label for="artistEspaciosOther">Indica en una mapa los espacios si no aparecen en la lista anterior:</label>
-				    <button class="add-new btn btn-outline-secondary" type="button">Añada otro espacio &nbsp; <span class="oi oi-plus"></span></button>
-						<button class="remove-new btn btn-outline-secondary" type="button" style="display:none;"></button>
+				    <label for="artistEspaciosOther">Indica en el mapa los espacios si no aparecen en la lista anterior:</label>
+				    <button class="add-new btn btn-light" type="button">Añada otro espacio &nbsp; <span class="oi oi-plus"></span></button>
+						<button class="remove-new btn btn-light" type="button" style="display:none;"></button>
 					</div>
 
 				</div>
@@ -193,9 +195,9 @@
 				
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -209,16 +211,17 @@
 			<div class="row">
 
 				<div class="col-sm-12"><p class="page-marker">5 / 8</p></div>
-
+<!--
 				<div class="col-sm-6 offset-sm-3">
 					<h5>Eventos en los que has participado</h5>
 				</div>
+		-->	
 			</div>
-			
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="artistEventos" name="artistEventos[]" class="selectpicker" multiple>
+				    <label for="artistEventos">Eventos en los que has participado:</label>
+						<select id="artistEventos" name="artistEventos[]" class="bootstrap-select" multiple>
 							<?php foreach($festivales as $festival):?>
 								<option value="<?php echo $festival->Id;?>"><?php echo $festival->Nombre;?></option>
 							<?php endforeach;?>
@@ -227,15 +230,15 @@
 					
 					<div class="form-group">
 				    <label for="artistEventosOther">Nombra algún evento en el que has participado, si no aparece en la lista anterior:</label>
-				    <button class="add-new btn btn-outline-secondary" type="button">Añada un evento &nbsp; <span class="oi oi-plus"></span></button>
-						<button class="remove-new btn btn-outline-secondary" type="button" style="display:none;"></button>
+				    <button class="add-new btn btn-light" type="button">Añada un evento &nbsp; <span class="oi oi-plus"></span></button>
+						<button class="remove-new btn btn-light" type="button" style="display:none;"></button>
 					</div>
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -250,15 +253,17 @@
 
 				<div class="col-sm-12"><p class="page-marker">6 / 8</p></div>
 
-				<div class="col-sm-6 offset-sm-3">
+<!--
+			<div class="col-sm-6 offset-sm-3">
 					<h5>Selecciona alguno de los siguientes términos para describir tu práctica:</h5>
 				</div>
+			-->
 			</div>
-			
 			<div class="row">
 				<div class="col-sm-6 offset-sm-3">
 					<div class="form-group">
-						<select id="artistEtiquetas" name="artistEtiquetas[]" class="selectpicker" multiple>
+				    <label for="artistEtiquetas">Selecciona alguno de los siguientes términos para describir tu práctica:</label>
+						<select id="artistEtiquetas" name="artistEtiquetas[]" class="bootstrap-select" multiple>
 							<?php foreach($etiquetas as $etiqueta):?>
 								<option value="<?php echo $etiqueta->Id;?>"><?php echo $etiqueta->Castellano;?></option>
 							<?php endforeach;?>
@@ -274,9 +279,9 @@
 					
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -301,9 +306,9 @@
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next btn btn-light" type="button"><img src="img/siguiente.png" width="100"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next btn btn-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next btn btn-outline-light" type="button"><img src="img/siguiente.png" width="100"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next btn btn-outline-light" type="button">SIGUIENTE<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 			</div>
 		</div>
@@ -353,9 +358,9 @@
 				</div>
 				
 				<div class="col-sm-12 text-center button-container">
-					<button class="button-next button-submit btn btn-light" type="button"><img src="img/enviar-sq.png" width="150"></button>
-					<button class="mobile button-prev btn btn-light" type="button"><span class="oi oi-arrow-left"></span></button>
-					<!--<button class="button-next button-submit btn btn-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>-->
+					<button class="button-next button-submit btn btn-outline-light" type="button"><img src="img/enviar-sq.png" width="150"></button>
+					<button class="mobile button-prev btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span></button>
+					<!--<button class="button-next button-submit btn btn-outline-light" type="button">ENVIAR<span class="oi oi-arrow-right"></span></button>-->
 				</div>
 				
 			</div>
@@ -372,8 +377,8 @@
 						
 				</div>
 				<div class="col-sm-12 text-center button-container">
-					<!--<button class="button-start button-next btn btn-light" type="button"><span class="oi oi-arrow-left"></span>Nuevo formulario</button>-->
-					<button class="button-start button-next btn btn-light" type="button"><img src="img/nuevo.png" width="150"></button>
+					<!--<button class="button-start button-next btn btn-outline-light" type="button"><span class="oi oi-arrow-left"></span>Nuevo formulario</button>-->
+					<button class="button-start button-next btn btn-outline-light" type="button"><img src="img/nuevo.png" width="150"></button>
 				</div>
 				
 			</div>

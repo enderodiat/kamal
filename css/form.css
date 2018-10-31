@@ -1,6 +1,7 @@
 html {
   position: relative;
   min-height: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 .section { height:100vh; display:none; padding-top:100px; }
@@ -131,15 +132,25 @@ a:hover { text-decoration:none; color:#000; }
 
 .button-container { margin-top:30px; margin-bottom:100px; }
 .button-container button { font-weight:bold; }
-.button-container button span.oi { position:relative; top:2px; margin-left:7px; }
+//.button-container button span.oi { position:relative; top:2px; margin-left:7px; }
 
+.bootstrap-select { display:block!important; }
 .bootstrap-select button { height:38px; }
+
+button.add-new { display:block; }
 
 form { margin-bottom:0px; }
 
-.nav-container { position:fixed; top:0px; right:0px; width:320px; padding:20px; }
+.nav-container { position:fixed; top:0px; right:0px; width:312px; padding:20px; }
+.nav-inner-container { 
+    margin-top: 60px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav-inner-container button { margin-bottom:40px; }
 
-.nav-container button { margin:5px; }
+.nav-container button.img { padding:0.1875rem .375rem; }
 
 #map_button {  }
 //#form_button { top:-100px; position:relative; right:-150px; }
@@ -151,10 +162,28 @@ p.page-marker { text-align:center; margin-bottom:20px; }
 
 button.btn {  }
 
+.nav-container .btn-light { border-color:transparent; background-color:#fff; }
+.nav-container .btn-dark { border-color:transparent; background-color:#000; }
+.btn-outline-light, .btn-outline-dark { border-color:transparent; }
+.btn-outline-light:hover, .btn-outline-dark:hover { border-color:transparent; background:transparent; }
+.nav-container .btn-dark:hover { background:#000; }
+.nav-container .btn-light:hover { background:#fff; }
+.nav-container .btn-light:hover img, .nav-container .btn-dark:hover img, .btn-outline-light:hover img, .btn-outline-dark:hover img { opacity:0.8; }
+.btn-outline-dark { color:#fff; }
+.btn-outline-light { color:#000; }
+
+.btn-light.focus, .btn-light:focus, .btn-outline-light.focus, .btn-outline-light:focus, .btn-dark.focus, .btn-dark:focus, .btn-outline-dark.focus, .btn-outline-dark:focus {
+    box-shadow: none;
+}
+
+
+
 .mobile { display:none!important; }
 
 @media (max-width: 576px) {
 	.mobile { display:block!important; }
 	.desktop { display:none!important; }
 	.button-prev { margin:10px auto -10px auto; }
+	.nav-container button img { height:80px; }
+	.nav-container { width:232px; }
 }
